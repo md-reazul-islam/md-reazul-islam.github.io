@@ -93,7 +93,7 @@ const NEWS = [
   { date: "2025", text: "Presented “The Ethics of AI in Academic Work” at the AI+ Symposium, University at Albany." },
   { date: "2025-08", text: "Started the PhD in Computer Science at the University at Albany, SUNY, as a Graduate Teaching Assistant." },
   { date: "2025", text: "Began reviewing for Scientific Reports, Discover Artificial Intelligence, Discover Computing, and Cluster Computing (Springer Nature)." },
-  { date: "2024", text: "Women’s safety wearable published in Multimedia Tools and Applications (Springer).", link: "https://link.springer.com/article/10.1007/s11042-024-20228-5" },
+  { date: "2024-09", text: "Women’s safety wearable published online in Multimedia Tools and Applications (Springer).", link: "https://link.springer.com/article/10.1007/s11042-024-20228-5" },
   { date: "2024-01", text: "Appointed Assistant Professor of Computer Science, American International University-Bangladesh." },
   { date: "2023-01", text: "Research team won five national awards at Digital Bangladesh Mela 2023." },
   { date: "2023", text: "Remote health monitoring system published in Sensors (MDPI).", link: "https://www.mdpi.com/1424-8220/23/11/5204" }
@@ -103,10 +103,10 @@ const NEWS = [
    Add doi/url when you have them; year:null shows as "Forthcoming". */
 const PUBLICATIONS = [
   {
-    type: "journal", year: 2024,
+    type: "journal", year: 2025,
     title: "Machine learning-driven IoT device for women’s safety: a real-time sexual harassment prevention system",
-    authors: "Md. Reazul Islam, Khondokar Oliullah, Md Mohsin Kabir, M. F. Mridha, Ashifur Rahman, Muhammad Fayyaz Khan",
-    venue: "Multimedia Tools and Applications (Springer)",
+    authors: "Md. Reazul Islam, Khondokar Oliullah, Md Mohsin Kabir, Ashifur Rahman, M. F. Mridha, Muhammad Fayyaz Khan, Nilanjan Dey",
+    venue: "Multimedia Tools and Applications (Springer), 84(23), 27251–27280",
     url: "https://link.springer.com/article/10.1007/s11042-024-20228-5",
     abstract: "A wearable with nine force-sensitive resistors streams data via NodeMCU to the cloud, where an AdaBoost classifier (99.3% accuracy on a 1,048-instance lab dataset from 50 participants) detects harassment events in real time and alerts authorities through a mobile app.",
     featured: true
@@ -124,30 +124,33 @@ const PUBLICATIONS = [
     type: "journal", year: 2023,
     title: "Machine learning enabled IoT system for soil nutrients monitoring and crop recommendation",
     authors: "Md. Reazul Islam, Khondokar Oliullah, Md Mohsin Kabir, Munzirul Alom, M. F. Mridha",
-    venue: "Journal of Agriculture and Food Research (Elsevier)",
+    venue: "Journal of Agriculture and Food Research (Elsevier), 14, 100880",
     url: "https://www.sciencedirect.com/science/article/pii/S2666154323003873",
     abstract: "Field sensors for moisture, temperature, humidity and NPK feed ML models that recommend high-yield crops and fertilizer amounts, and record treatments so consumers can check produce quality in a mobile app.",
     featured: true
   },
   {
-    type: "journal", year: 2024,
+    type: "journal", year: 2025,
     title: "FruVeg_MultiNet: A hybrid deep learning-enabled IoT system for fresh fruit and vegetable identification with web interface and customized glasses for visually impaired individuals",
-    authors: "Khondokar Oliullah, Md. Reazul Islam, Jahirul Islam Babar, et al.",
-    venue: "Journal of Agriculture and Food Research (Elsevier)",
+    authors: "Khondokar Oliullah, Md. Reazul Islam, Jahirul Islam Babar, M. A. Nur Quraishi, et al.",
+    venue: "Journal of Agriculture and Food Research (Elsevier), 19, 101623",
+    url: "https://www.sciencedirect.com/science/article/pii/S2666154324006604",
     abstract: "A hybrid EfficientNetB7 + ResNet50 model reaches 99.92% and 95.93% precision on two datasets, with a 1.2 s average response time, delivered through a web interface and assistive glasses."
   },
   {
-    type: "journal", year: 2023,
+    type: "journal", year: 2024,
     title: "A stacked ensemble machine learning approach for the prediction of diabetes",
     authors: "Khondokar Oliullah, Mahedi Hasan Rasel, Md Manzurul Islam, Md. Reazul Islam, Md Anwar Hussen Wadud, Md Whaiduzzaman, et al.",
-    venue: "Journal of Diabetes & Metabolic Disorders (Springer)",
+    venue: "Journal of Diabetes & Metabolic Disorders (Springer), 23(1), 603–617",
     url: "https://link.springer.com/article/10.1007/s40200-023-01321-2"
   },
   {
-    type: "journal", year: null,
+    type: "journal", year: 2026,
     title: "An interpretable deep learning approach for breast cancer classification and tumor localization from histopathological images",
     authors: "Md. Owafeeuzzaman Patwary, Apurbo Biswas, Md. Reazul Islam, Md. Taufiqur Rahman, Syeda Asrafa Islam, Md. Abdullah-Al Jubair, Md Rakibul Islam, M. Firoz Mridha, et al.",
-    venue: "Results in Engineering (Elsevier)"
+    venue: "Results in Engineering (Elsevier), 32, 112107",
+    url: "https://www.sciencedirect.com/science/article/pii/S2590123026031282",
+    abstract: "A ConvNeXt-Tiny and MobileNetV3 ensemble classifies breast histopathology with over 98% accuracy, Grad-CAM++ explains its decisions in pathology-relevant regions, and a weakly supervised U-Net localizes tumors without pixel-level labels."
   },
   {
     type: "journal", year: null,
@@ -156,10 +159,11 @@ const PUBLICATIONS = [
     venue: "International Journal of Electrical and Computer Engineering (IJECE)"
   },
   {
-    type: "journal", year: null,
+    type: "journal", year: 2025,
     title: "IntelligentGuard: Smart doorbell with deep learning for secure user recognition and instant notifications",
     authors: "Md. Reazul Islam, Khondokar Oliullah, Rajarshi Roy Chowdhury, Shaikat Das Joy, MM Fazle Rabbi, et al.",
-    venue: "International Journal of Electrical and Electronics Research (IJEER)"
+    venue: "International Journal of Electrical and Electronics Research (IJEER), 13(2), 353–363",
+    url: "https://doi.org/10.37391/ijeer.130220"
   },
   {
     type: "dataset", year: null,
@@ -177,7 +181,7 @@ const PUBLICATIONS = [
     type: "conference", year: 2024,
     title: "Brain tumor detection by image segmentation using customized UNet deep learning based model",
     authors: "TM Amir-Ul-Haque Bhuiyan, Md Anwar Hussen Wadud, Nazmunnahar Amie, Md Mahbub-Or-Rashid, TM Ahkam-Ul-Haque Bhuiyan, Jannatun Nyeem Jui, Anichur Rahman, Md. Reazul Islam, et al.",
-    venue: "IEEE ICEEICT 2024"
+    venue: "6th International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT 2024), IEEE"
   },
   {
     type: "conference", year: 2023,
@@ -186,17 +190,17 @@ const PUBLICATIONS = [
     venue: "International Conference on Trends in Electronics and Health Informatics (TEHI 2023)"
   },
   {
-    type: "chapter", year: null,
+    type: "chapter", year: 2025,
     title: "Design and implementation of a cost-effective automatic water pump control system for domestic applications using IoT",
     authors: "Md. Reazul Islam, Khondokar Oliullah, MD Mahbub-Or-Rashid, Jugal Krishna Das, et al.",
-    venue: "Intelligent Networks and Systems (CRC Press / Taylor & Francis)",
+    venue: "Intelligent Networks and Systems: Advanced Technologies and Applications (CRC Press), p. 176",
     url: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781032659770-14/design-implementation-cost-effective-automatic-water-pump-control-system-domestic-applications-using-iot-md-reazul-islam-khondokar-oliullah-mahbub-rashid-jugal-krishna-das"
   },
   {
-    type: "chapter", year: null,
+    type: "chapter", year: 2026,
     title: "IoMT architecture for healthcare: integration, security, and real-time decision support",
-    authors: "Md. Reazul Islam, Mirza Asif Mahmud, Kazi Tanvir, Shaikat Das Joy, Mahfujur Rahman, Noboranjan Dey, Dipta Gomes, et al.",
-    venue: "IGI Global"
+    authors: "Md. Reazul Islam, Mirza Asif Mahmud, Kazi Tanvir, Shaikat Das Joy, Mahfujur Rahman, Noboranjan Dey, Dipta Gomes",
+    venue: "Robotics and IoT Synergy in Next-Generation Healthcare (IGI Global), pp. 305–340"
   },
   {
     type: "chapter", year: null,
