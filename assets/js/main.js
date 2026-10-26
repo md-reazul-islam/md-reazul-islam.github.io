@@ -537,6 +537,4 @@
 
   /* ---------- Footer ---------- */
   $("#year").textContent = new Date().getFullYear();
-  const lm = new Date(document.lastModified);
-  $("#updated").textContent = isNaN(lm) ? "recently" : lm.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 })();
