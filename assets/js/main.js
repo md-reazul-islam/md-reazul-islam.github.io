@@ -94,10 +94,12 @@
     const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 
     function size(c) {
-      const dpr = window.devicePixelRatio || 1;
-      const w = c.clientWidth, h = parseInt(c.getAttribute("height"), 10);
+      const dpr = Math.min(window.devicePixelRatio || 1, 3);
+      // fixed CSS height from data-h; width from the wrapper, never from the canvas itself
+      const h = +c.dataset.h || 80;
+      const w = Math.max(1, Math.floor(c.parentElement.getBoundingClientRect().width));
+      c.style.width = w + "px"; c.style.height = h + "px";
       c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
-      c.style.height = h + "px";
       const ctx = c.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       return { ctx, w, h };
     }
@@ -168,7 +170,15 @@
     }
 
     resize();
-    let rT; window.addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(resize, 120); });
+    // phones fire resize when the browser bar hides; only redraw when the width really changes
+    let rT, lastW = hrC.parentElement.getBoundingClientRect().width;
+    window.addEventListener("resize", () => {
+      clearTimeout(rT);
+      rT = setTimeout(() => {
+        const w = hrC.parentElement.getBoundingClientRect().width;
+        if (Math.abs(w - lastW) > 1) { lastW = w; resize(); }
+      }, 150);
+    });
 
     toggle.addEventListener("click", () => {
       motion = !motion;

@@ -195,14 +195,15 @@ main { padding: 56px clamp(20px, 5vw, 72px) 40px; max-width: calc(var(--main-w) 
   padding: 5px 12px; font-size: 12px; font-weight: 600; color: var(--ink);
 }
 .monitor-toggle[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #2A1E00; }
-.trace { display: grid; grid-template-columns: 112px 1fr; align-items: center; gap: 12px; }
+.trace { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: center; gap: 12px; }
 .trace + .trace { border-top: 1px dashed var(--line); }
 .trace-label { display: flex; flex-direction: column; line-height: 1.1; }
 .trace-name { font-size: 12px; color: var(--muted); font-weight: 600; }
 .trace-val { font: 500 38px/1 var(--serif); color: var(--pulse); font-variant-numeric: tabular-nums; margin-top: 4px; }
 .trace-val.resp { color: var(--resp); }
 .trace-unit { font-size: 12px; color: var(--muted); }
-.trace canvas { width: 100%; display: block; }
+.trace-plot { min-width: 0; width: 100%; overflow: hidden; }
+.trace canvas { display: block; max-width: 100%; }
 .monitor figcaption { font-size: 13px; color: var(--muted); margin-top: 10px; }
 
 .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 24px; font-size: 14px; color: var(--muted); }
@@ -483,7 +484,7 @@ dialog::backdrop { background: rgba(15, 10, 22, .6); backdrop-filter: blur(3px);
 @media (max-width: 600px) {
   body { font-size: 15.5px; }
   .hero-lede { font-size: 17px; }
-  .trace { grid-template-columns: 82px 1fr; gap: 8px; }
+  .trace { grid-template-columns: 82px minmax(0, 1fr); gap: 8px; }
   .trace-val { font-size: 30px; }
   .section { padding-top: 44px; margin-top: 32px; }
   .section-title { font-size: 28px; }
