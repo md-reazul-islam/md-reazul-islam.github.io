@@ -222,6 +222,13 @@
       <section id="awards" class="section">
         <h2 class="section-title">Awards and honors</h2>
         <ul class="awards" id="awardList"></ul>
+
+        <div class="certs-head">
+          <h3 class="sub-title">Certificates and recognition</h3>
+          <p class="section-lede" id="certLede"></p>
+        </div>
+        <div class="seg" id="certFilter" role="group" aria-label="Filter certificates"></div>
+        <div class="certs" id="certGrid"></div>
       </section>
 
       <!-- SERVICE -->
@@ -315,7 +322,10 @@
   <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
     <button class="modal-close" data-close aria-label="Close image">×</button>
     <img id="lbImg" alt="">
-    <p id="lbCap"></p>
+    <div class="lb-text">
+      <p id="lbCap"></p>
+      <p id="lbDetail" hidden></p>
+    </div>
     <button class="pm-nav prev" id="lbPrev" aria-label="Previous image">‹</button>
     <button class="pm-nav next" id="lbNext" aria-label="Next image">›</button>
   </dialog>

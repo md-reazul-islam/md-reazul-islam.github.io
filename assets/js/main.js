@@ -347,7 +347,7 @@
 
   // broken-image fallback: keep layout tidy if a remote image is gone
   document.addEventListener("error", (e) => {
-    if (e.target.tagName === "IMG" && e.target.closest(".proj-img, .g-item, .talk-thumb")) {
+    if (e.target.tagName === "IMG" && e.target.closest(".proj-img, .g-item, .talk-thumb, .cert-img")) {
       e.target.remove();
     }
   }, true);
@@ -411,8 +411,52 @@
   });
 
   /* ---------- Awards, service, skills, media ---------- */
+  const CERT_DIR = "assets/img/certificates/";
+  const certById = Object.fromEntries(CERTIFICATES.map((c) => [c.id, c]));
+  const certItem = (c) => ({
+    src: CERT_DIR + c.id + ".jpg",
+    caption: c.title,
+    detail: `${c.kind}, ${c.issuer}${c.year ? ", " + c.year : ""}. ${c.text}`
+  });
   $("#awardList").innerHTML = AWARDS.map((a) =>
-    `<li>${a.year ? `<span class="aw-year">${a.year}</span>` : ""}<h3>${esc(a.title)}</h3><p>${esc(a.by)}</p></li>`).join("");
+    `<li>${a.year ? `<span class="aw-year">${a.year}</span>` : ""}<h3>${esc(a.title)}</h3><p>${esc(a.by)}</p>${
+      a.cert && certById[a.cert] ? `<button class="aw-cert" data-cert="${esc(a.cert)}">View certificate</button>` : ""}</li>`).join("");
+  $("#awardList").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-cert]"); if (b) openLightbox([certItem(certById[b.dataset.cert])], 0);
+  });
+
+  /* ---------- Certificates ---------- */
+  let certCat = "all";
+  const certOrder = Object.keys(CERT_CATS);
+  const certsSorted = CERTIFICATES.slice().sort((a, b) =>
+    certOrder.indexOf(a.cat) - certOrder.indexOf(b.cat) || (b.year || 0) - (a.year || 0));
+  const issuers = new Set(CERTIFICATES.map((c) => c.issuer.split(",")[0]));
+  $("#certLede").textContent = `${CERTIFICATES.length} certificates from ${issuers.size} universities, conferences and programs. Select one to view it full size.`;
+  function renderCertFilter() {
+    const counts = CERTIFICATES.reduce((a, c) => ((a[c.cat] = (a[c.cat] || 0) + 1), a), {});
+    const keys = ["all", ...certOrder.filter((k) => counts[k])];
+    $("#certFilter").innerHTML = keys.map((k) =>
+      `<button data-c="${k}" aria-pressed="${k === certCat}">${k === "all" ? "All" : CERT_CATS[k]}<span class="count">${k === "all" ? CERTIFICATES.length : counts[k]}</span></button>`).join("");
+    $$("#certFilter button").forEach((b) => b.addEventListener("click", () => {
+      certCat = b.dataset.c; renderCertFilter();
+      $$("#certGrid .cert").forEach((el) => { el.hidden = certCat !== "all" && el.dataset.cat !== certCat; });
+    }));
+  }
+  $("#certGrid").innerHTML = certsSorted.map((c) => `
+    <button class="cert" data-id="${esc(c.id)}" data-cat="${c.cat}" aria-label="View certificate: ${esc(c.title)}">
+      <span class="cert-img"><img src="${CERT_DIR + c.id}-thumb.jpg" alt="" loading="lazy"></span>
+      <span class="cert-body">
+        <span class="cert-meta"><span class="cert-cat cert-${c.cat}">${esc(CERT_CATS[c.cat])}</span>${c.year ? `<span class="cert-year">${c.year}</span>` : ""}</span>
+        <span class="cert-title">${esc(c.title)}</span>
+        <span class="cert-issuer">${esc(c.issuer)}</span>
+      </span>
+    </button>`).join("");
+  renderCertFilter();
+  $("#certGrid").addEventListener("click", (e) => {
+    const b = e.target.closest(".cert"); if (!b) return;
+    const visible = certsSorted.filter((c) => certCat === "all" || c.cat === certCat);
+    openLightbox(visible.map(certItem), visible.findIndex((c) => c.id === b.dataset.id));
+  });
   $("#reviewList").innerHTML = SERVICE.reviewer.map((r) => `<li>${esc(r.journal)}<span>since ${r.since}</span></li>`).join("");
   $("#leadList").innerHTML = SERVICE.leadership.map((l) => `<li>${esc(l)}</li>`).join("");
   $("#skillList").innerHTML = SKILLS.map((g) =>
@@ -447,6 +491,8 @@
     const it = lbSet[lbI];
     $("#lbImg").src = it.src; $("#lbImg").alt = it.caption;
     $("#lbCap").textContent = it.caption + (lbSet.length > 1 ? `  (${lbI + 1} of ${lbSet.length})` : "");
+    $("#lbDetail").hidden = !it.detail;
+    $("#lbDetail").textContent = it.detail || "";
     $("#lbPrev").hidden = $("#lbNext").hidden = lbSet.length < 2;
   }
   function openLightbox(set, i) { lbSet = set; lbI = Math.max(0, i); showLb(); lb.showModal(); }
@@ -476,7 +522,8 @@
       const el = $("#pub-" + i); el.scrollIntoView({ block: "center" });
       const btn = $(`[data-abs="${i}"]`, el); if (btn.getAttribute("aria-expanded") === "false") btn.click(); btn.focus();
     } })),
-    ...PROJECTS.map((p, i) => ({ kind: "Project", label: p.title, go: () => openProject(i) }))
+    ...PROJECTS.map((p, i) => ({ kind: "Project", label: p.title, go: () => openProject(i) })),
+    ...CERTIFICATES.map((c) => ({ kind: "Certificate", label: c.title, go: () => openLightbox([certItem(c)], 0) }))
   ];
   let palSel = 0, palView = [];
   function renderPal() {
