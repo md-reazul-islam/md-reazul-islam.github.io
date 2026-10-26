@@ -86,6 +86,8 @@ const RESEARCH = [
 
 /* News — newest first. date: "YYYY-MM" or "YYYY" */
 const NEWS = [
+  { date: "2026", text: "Two papers in Frontiers in Oncology on single-cell and spatial multi-omics and on graph neural networks for breast cancer drug resistance." },
+  { date: "2026", text: "Elderly remote health monitoring and fall detection dataset published in Data in Brief." },
   { date: "2026-04", text: "Presented two projects at UAlbany Showcase Day 2026: AIoT air pollution mapping and closed-loop metabolic monitoring." },
   { date: "2026-04", text: "Featured by the University at Albany: “UAlbany Student Develops App to Help You Avoid Pollution Hot Spots.”", link: "https://www.albany.edu/node/124526" },
   { date: "2026", text: "Served as a judge at the Tri-County Science and Technology Fair 2026." },
@@ -107,6 +109,7 @@ const PUBLICATIONS = [
     title: "Machine learning-driven IoT device for women’s safety: a real-time sexual harassment prevention system",
     authors: "Md. Reazul Islam, Khondokar Oliullah, Md Mohsin Kabir, Ashifur Rahman, M. F. Mridha, Muhammad Fayyaz Khan, Nilanjan Dey",
     venue: "Multimedia Tools and Applications (Springer), 84(23), 27251–27280",
+    cites: 25,
     url: "https://link.springer.com/article/10.1007/s11042-024-20228-5",
     abstract: "A wearable with nine force-sensitive resistors streams data via NodeMCU to the cloud, where an AdaBoost classifier (99.3% accuracy on a 1,048-instance lab dataset from 50 participants) detects harassment events in real time and alerts authorities through a mobile app.",
     featured: true
@@ -116,6 +119,7 @@ const PUBLICATIONS = [
     title: "Deep learning-based IoT system for remote monitoring and early detection of health issues in real-time",
     authors: "Md. Reazul Islam, Md. Mohsin Kabir, M. F. Mridha, Sultan Alfarhood, Mejdl Safran, Dunren Che",
     venue: "Sensors (MDPI), 23(11), 5204",
+    cites: 242,
     url: "https://www.mdpi.com/1424-8220/23/11/5204",
     abstract: "MAX30100, AD8232 ECG and MLX90614 sensors stream vitals over MQTT to a CNN with attention that classifies five heartbeat categories and fever status, and connects users to the nearest doctor when critical abnormalities appear.",
     featured: true
@@ -125,6 +129,7 @@ const PUBLICATIONS = [
     title: "Machine learning enabled IoT system for soil nutrients monitoring and crop recommendation",
     authors: "Md. Reazul Islam, Khondokar Oliullah, Md Mohsin Kabir, Munzirul Alom, M. F. Mridha",
     venue: "Journal of Agriculture and Food Research (Elsevier), 14, 100880",
+    cites: 280,
     url: "https://www.sciencedirect.com/science/article/pii/S2666154323003873",
     abstract: "Field sensors for moisture, temperature, humidity and NPK feed ML models that recommend high-yield crops and fertilizer amounts, and record treatments so consumers can check produce quality in a mobile app.",
     featured: true
@@ -134,6 +139,7 @@ const PUBLICATIONS = [
     title: "FruVeg_MultiNet: A hybrid deep learning-enabled IoT system for fresh fruit and vegetable identification with web interface and customized glasses for visually impaired individuals",
     authors: "Khondokar Oliullah, Md. Reazul Islam, Jahirul Islam Babar, M. A. Nur Quraishi, et al.",
     venue: "Journal of Agriculture and Food Research (Elsevier), 19, 101623",
+    cites: 22,
     url: "https://www.sciencedirect.com/science/article/pii/S2666154324006604",
     abstract: "A hybrid EfficientNetB7 + ResNet50 model reaches 99.92% and 95.93% precision on two datasets, with a 1.2 s average response time, delivered through a web interface and assistive glasses."
   },
@@ -142,7 +148,20 @@ const PUBLICATIONS = [
     title: "A stacked ensemble machine learning approach for the prediction of diabetes",
     authors: "Khondokar Oliullah, Mahedi Hasan Rasel, Md Manzurul Islam, Md. Reazul Islam, Md Anwar Hussen Wadud, Md Whaiduzzaman, et al.",
     venue: "Journal of Diabetes & Metabolic Disorders (Springer), 23(1), 603–617",
+    cites: 76,
     url: "https://link.springer.com/article/10.1007/s40200-023-01321-2"
+  },
+  {
+    type: "journal", year: 2026,
+    title: "Integrating single-cell and spatial multi-omics for precision oncology: from tumor ecosystems to clinical decision-making",
+    authors: "S. R. Nirob, P. R. Das, Md Owafeeuzzaman Patwary, S. A. Ashfaque, Md. Reazul Islam, et al.",
+    venue: "Frontiers in Oncology, 16, 1936192"
+  },
+  {
+    type: "journal", year: 2026,
+    title: "Graph neural networks for multi-scale gene-drug interaction modeling in cancer: applications, challenges, and therapeutic opportunities for breast cancer drug resistance",
+    authors: "P. R. Das, M. J. Rahman, S. R. Nirob, Md Owafeeuzzaman Patwary, Md. Reazul Islam, M. S. Islam, et al.",
+    venue: "Frontiers in Oncology, 16, 1929697"
   },
   {
     type: "journal", year: 2026,
@@ -166,22 +185,25 @@ const PUBLICATIONS = [
     url: "https://doi.org/10.37391/ijeer.130220"
   },
   {
-    type: "dataset", year: null,
+    type: "dataset", year: 2026,
     title: "AI-driven Internet of Things (IoT) dataset for remote health monitoring and fall detection in elderly people",
-    authors: "Md. Reazul Islam, Md Owafeeuzzaman Patwary, SM Ashiqul Islam, et al.",
-    venue: "Elsevier"
+    authors: "Md. Reazul Islam, Md Owafeeuzzaman Patwary, SM Ashiqul Islam",
+    venue: "Data in Brief (Elsevier), 112641",
+    cites: 4
   },
   {
     type: "conference", year: 2024,
     title: "MNIST handwritten digit recognition using a deep learning-based modified dual input convolutional neural network (DICNN) model",
     authors: "Ali Azgar, Md Imran Nazir, Afsana Akter, Md Saddam Hossain, Md Anwar Hussen Wadud, Md. Reazul Islam, et al.",
-    venue: "9th International Congress on Information and Communication Technology (ICICT 2024), London"
+    venue: "9th International Congress on Information and Communication Technology (ICICT 2024), London, pp. 563–573",
+    cites: 23
   },
   {
     type: "conference", year: 2024,
     title: "Brain tumor detection by image segmentation using customized UNet deep learning based model",
     authors: "TM Amir-Ul-Haque Bhuiyan, Md Anwar Hussen Wadud, Nazmunnahar Amie, Md Mahbub-Or-Rashid, TM Ahkam-Ul-Haque Bhuiyan, Jannatun Nyeem Jui, Anichur Rahman, Md. Reazul Islam, et al.",
-    venue: "6th International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT 2024), IEEE"
+    venue: "6th International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT 2024), IEEE",
+    cites: 9
   },
   {
     type: "conference", year: 2023,
@@ -194,31 +216,39 @@ const PUBLICATIONS = [
     title: "Design and implementation of a cost-effective automatic water pump control system for domestic applications using IoT",
     authors: "Md. Reazul Islam, Khondokar Oliullah, MD Mahbub-Or-Rashid, Jugal Krishna Das, et al.",
     venue: "Intelligent Networks and Systems: Advanced Technologies and Applications (CRC Press), p. 176",
+    cites: 2,
     url: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781032659770-14/design-implementation-cost-effective-automatic-water-pump-control-system-domestic-applications-using-iot-md-reazul-islam-khondokar-oliullah-mahbub-rashid-jugal-krishna-das"
   },
   {
     type: "chapter", year: 2026,
     title: "IoMT architecture for healthcare: integration, security, and real-time decision support",
     authors: "Md. Reazul Islam, Mirza Asif Mahmud, Kazi Tanvir, Shaikat Das Joy, Mahfujur Rahman, Noboranjan Dey, Dipta Gomes",
-    venue: "Robotics and IoT Synergy in Next-Generation Healthcare (IGI Global), pp. 305–340"
+    venue: "Robotics and IoT Synergy in Next-Generation Healthcare (IGI Global), pp. 305–340",
+    cites: 3
   },
   {
-    type: "chapter", year: null,
+    type: "chapter", year: 2026,
     title: "Synthetic healthcare data in generation, validation, and integration for ethical and scalable health innovation",
-    authors: "Shaikat Das Joy, Noboranjan Dey, Md. Reazul Islam, Mirza Asif Mahmud, Mahfujur Rahman, Kazi Tanvir, Dipta Gomes, et al.",
-    venue: "IGI Global"
+    authors: "Shaikat Das Joy, Noboranjan Dey, Md. Reazul Islam, Mirza Asif Mahmud, Mahfujur Rahman, Kazi Tanvir, Dipta Gomes",
+    venue: "Advances in Synthetic Healthcare Data: Opportunities, Challenges, and Applications (IGI Global)"
   },
   {
-    type: "chapter", year: null,
+    type: "chapter", year: 2026,
     title: "Vision language models in healthcare through a multimodal approach to medical imaging and clinical applications",
-    authors: "Kazi Tanvir, Dipta Gomes, Mahfujur Rahman, Noboranjan Dey, Md. Reazul Islam, et al.",
-    venue: "IGI Global"
+    authors: "Kazi Tanvir, R. Biswas, Dipta Gomes, Mahfujur Rahman, Noboranjan Dey, Md. Reazul Islam",
+    venue: "Vision Language Models for Next-Generation Healthcare (IGI Global), pp. 259–292"
   },
   {
-    type: "chapter", year: null,
+    type: "chapter", year: 2026,
     title: "A comprehensive study on the ethical perspective of integration of agentic AI for autonomous vehicles",
-    authors: "Mirza Asif Mahmud, Mahfujur Rahman, Dipta Gomes, Kazi Tanvir, Md. Reazul Islam, et al.",
-    venue: "IGI Global"
+    authors: "Mirza Asif Mahmud, Mahfujur Rahman, Dipta Gomes, Kazi Tanvir, Md. Reazul Islam",
+    venue: "Agentic AI for Autonomous Vehicles: Safety, Reliability, Law, and Ethics (IGI Global)"
+  },
+  {
+    type: "chapter", year: 2026,
+    title: "Securing the future: enhancing cybersecurity and resilience in digital and software supply chains",
+    authors: "Md Owafeeuzzaman Patwary, R. Jarin, Apurbo Biswas, M. M. T. Partho, Dipta Gomes, Md. Reazul Islam",
+    venue: "AI-Driven Cybersecurity Systems, Applications, and Resilient Infrastructure (IGI Global)"
   }
 ];
 
