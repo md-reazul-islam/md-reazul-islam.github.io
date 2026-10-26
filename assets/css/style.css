@@ -172,8 +172,9 @@ main { padding: 56px clamp(20px, 5vw, 72px) 40px; max-width: calc(var(--main-w) 
   .mobile-id span { font-size: 13px; color: var(--muted); }
 }
 .hero-title {
-  font: 500 clamp(32px, 4.6vw, 52px)/1.08 var(--serif);
-  letter-spacing: -.02em; margin: 0 0 18px; max-width: 18ch;
+  font: 500 clamp(26px, 2.75vw, 38px)/1.18 var(--serif);
+  letter-spacing: -.015em; margin: 0 0 18px; max-width: 46ch;
+  text-wrap: balance;
   font-variation-settings: "opsz" 72;
 }
 .hero-lede { font-size: 19px; color: var(--muted); max-width: 58ch; margin: 0 0 32px; }
