@@ -481,7 +481,8 @@ const MEDIA = [
   { outlet: "Prothom Alo", date: "2023", title: "Coverage of the smart dress for women’s safety (Bangla)", url: "https://www.prothomalo.com/bangladesh/62i23tdgc0" },
   { outlet: "The Daily Campus", date: "2023", title: "Video feature on the women’s safety wearable", url: "https://www.facebook.com/thedailycampusbd/videos/676134407671849" },
   { outlet: "Springer Nature", date: "2024", title: "Machine learning-driven IoT device for women’s safety (paper)", url: "https://link.springer.com/article/10.1007/s11042-024-20228-5" },
-  { outlet: "News24", date: "", title: "Implementing and supporting a virtual educational platform (LMS) during COVID-19 (video)", url: "https://www.youtube.com/watch?v=us8ApUEFYH4" }
+  { outlet: "News24", date: "", title: "Implementing and supporting a virtual educational platform (LMS) during COVID-19 (video)", url: "https://www.youtube.com/watch?v=us8ApUEFYH4" },
+  { outlet: "Ekattor TV", date: "", title: "Implementing and supporting a virtual educational platform (LMS) during COVID-19 (video)", url: "https://www.youtube.com/watch?v=EsUEtBfdukM" }
 ];
 
 const SKILLS = [
