@@ -336,6 +336,7 @@
       <div class="proj-img">
         ${p.images && p.images[0] ? `<img src="${esc(p.images[0])}" alt="" loading="lazy">` : ""}
         ${p.funded ? `<span class="proj-badge">Funded</span>` : ""}
+        ${p.videos && p.videos.length ? `<span class="proj-video"><span aria-hidden="true">▶</span> ${p.videos.length > 1 ? p.videos.length + " videos" : "Video"}</span>` : ""}
       </div>
       <div class="proj-body">
         <span class="proj-cat">${esc(PROJECT_CATS[p.cat])}${p.year ? ", " + p.year : ""}</span>
@@ -354,13 +355,32 @@
 
   const pm = $("#projModal");
   let pmP = null, pmI = 0;
+  // media = videos first, then photos
+  const projMedia = (p) => [
+    ...(p.videos || []).map((v) => ({ type: "video", src: v.src, title: v.title })),
+    ...(p.images || []).map((src) => ({ type: "img", src }))
+  ];
+  const pmVid = $("#pmVideo");
   function showPm() {
-    const imgs = pmP.images || [];
-    $("#pmImg").src = imgs[pmI] || "";
-    $("#pmImg").alt = pmP.title + (imgs.length > 1 ? `, image ${pmI + 1} of ${imgs.length}` : "");
-    $("#pmCount").textContent = imgs.length > 1 ? `${pmI + 1} / ${imgs.length}` : "";
-    $("#pmPrev").hidden = $("#pmNext").hidden = imgs.length < 2;
+    const media = projMedia(pmP), m = media[pmI];
+    pmVid.pause();
+    if (m && m.type === "video") {
+      $("#pmImg").hidden = true; pmVid.hidden = false;
+      if (pmVid.getAttribute("src") !== m.src) { pmVid.src = m.src; pmVid.poster = (pmP.images || [])[0] || ""; }
+      pmVid.setAttribute("aria-label", "Video: " + (m.title || pmP.title));
+    } else {
+      pmVid.hidden = true; pmVid.removeAttribute("src"); pmVid.load(); $("#pmImg").hidden = false;
+      $("#pmImg").src = m ? m.src : "";
+      $("#pmImg").alt = pmP.title + (media.length > 1 ? `, item ${pmI + 1} of ${media.length}` : "");
+    }
+    $("#pmCount").textContent = media.length > 1 ? `${m && m.type === "video" ? "Video" : "Photo"} ${pmI + 1} / ${media.length}` : "";
+    $("#pmPrev").hidden = $("#pmNext").hidden = media.length < 2;
+    $("#pmThumbs").innerHTML = media.length > 1 ? media.map((x, i) =>
+      `<button class="pm-thumb${i === pmI ? " on" : ""}" data-i="${i}" aria-label="${x.type === "video" ? "Play video" : "Show photo " + (i + 1)}">${
+        x.type === "video" ? `<span class="pm-play">▶</span>` : `<img src="${esc(x.src)}" alt="" loading="lazy">`}</button>`).join("") : "";
   }
+  $("#pmThumbs").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) { pmI = +b.dataset.i; showPm(); } });
+  pm.addEventListener("close", () => { pmVid.pause(); });
   $("#projGrid").addEventListener("click", (e) => {
     const card = e.target.closest(".proj"); if (!card) return;
     openProject(+card.dataset.p);
@@ -375,8 +395,8 @@
     showPm();
     pm.showModal();
   }
-  $("#pmPrev").addEventListener("click", () => { pmI = (pmI - 1 + pmP.images.length) % pmP.images.length; showPm(); });
-  $("#pmNext").addEventListener("click", () => { pmI = (pmI + 1) % pmP.images.length; showPm(); });
+  $("#pmPrev").addEventListener("click", () => { const n = projMedia(pmP).length; pmI = (pmI - 1 + n) % n; showPm(); });
+  $("#pmNext").addEventListener("click", () => { const n = projMedia(pmP).length; pmI = (pmI + 1) % n; showPm(); });
 
   /* ---------- Experience ---------- */
   const EXP_GROUPS = { all: "All", academic: "Teaching", research: "Research", industry: "Industry" };
@@ -505,7 +525,7 @@
   });
   document.addEventListener("keydown", (e) => {
     if (lb.open) { if (e.key === "ArrowLeft") $("#lbPrev").click(); if (e.key === "ArrowRight") $("#lbNext").click(); }
-    if (pm.open && pmP && pmP.images.length > 1) { if (e.key === "ArrowLeft") $("#pmPrev").click(); if (e.key === "ArrowRight") $("#pmNext").click(); }
+    if (pm.open && pmP && projMedia(pmP).length > 1 && document.activeElement !== pmVid) { if (e.key === "ArrowLeft") $("#pmPrev").click(); if (e.key === "ArrowRight") $("#pmNext").click(); }
   });
 
   /* ---------- Command palette ---------- */
