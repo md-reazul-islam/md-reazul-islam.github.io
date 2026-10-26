@@ -278,7 +278,7 @@
       .map((p, i) => ({ ...p, i }))
       .filter((p) => pubType === "all" || p.type === pubType)
       .filter((p) => !q || (p.title + " " + p.authors + " " + p.venue).toLowerCase().includes(q))
-      .sort((a, b) => (b.year || 9999) - (a.year || 9999));
+      .sort((a, b) => (b.year || 9999) - (a.year || 9999) || (b.cites || 0) - (a.cites || 0));
     const groups = {};
     list.forEach((p) => { const k = p.year ? String(p.year) : "Forthcoming and other"; (groups[k] = groups[k] || []).push(p); });
     const order = Object.keys(groups).sort((a, b) => (isNaN(b) ? -1 : +b) - (isNaN(a) ? -1 : +a));
@@ -295,6 +295,7 @@
             <div class="pub-actions">
               ${p.featured ? `<span class="pill star">Selected</span>` : ""}
               ${p.url ? `<a class="pill" href="${esc(p.url)}" target="_blank" rel="noopener">${ICONS.doc}Paper</a>` : ""}
+              ${p.cites ? `<a class="pill" href="${esc(SITE.links.scholar)}" target="_blank" rel="noopener" title="Citations on Google Scholar">Cited by ${p.cites}</a>` : ""}
               <button class="pill" data-cite="${p.i}">${ICONS.copy}Cite</button>
               <button class="pill" data-bib="${p.i}">${ICONS.copy}BibTeX</button>
             </div>
