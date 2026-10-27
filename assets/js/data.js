@@ -411,6 +411,8 @@ const PROJECTS = [
 
 /* Experience. group: academic | research | industry */
 const EXPERIENCE = [
+  { group: "research", role: "PhD Researcher, AI in Healthcare", org: "Computer Vision and Machine Learning Lab (CVML)", orgUrl: "https://www.albany.edu/cnse/research/computer-vision-machine-learning-lab", place: "University at Albany, SUNY", start: "Aug 2025", end: "Present",
+    detail: "Measuring a newborn’s heartbeat and breathing from video, without touching the baby." },
   { group: "academic", role: "Graduate Teaching Assistant", org: "University at Albany, SUNY", place: "Albany, NY", start: "Aug 2025", end: "Present",
     detail: "Supports undergraduate computer science courses through labs, grading and office hours while pursuing the PhD." },
   { group: "academic", role: "Assistant Professor, Computer Science", org: "American International University-Bangladesh", place: "Dhaka", start: "Jan 2024", end: "Aug 2025",
@@ -419,8 +421,6 @@ const EXPERIENCE = [
     detail: "Taught and supervised IoT research; organized the IoT Research Projects Showcase 2022; advised the IEEE BUBT Student Branch. Received the Best Teacher Award." },
   { group: "academic", role: "Lecturer, Computer Science", org: "Daffodil International University", place: "Dhaka", start: "Jan 2017", end: "Apr 2018",
     detail: "Taught programming and web courses. Received the Best Supervisor Award at the DIU ICT Carnival 2018." },
-  { group: "research", role: "Lead Researcher, IoT, AI and ML", org: "Advanced Machine Intelligence Research (AMIR) Lab", place: "Remote", start: "Jan 2023", end: "Jan 2026",
-    detail: "Led a team producing peer-reviewed work in Sensors, MTAP and JAFR; mentored student researchers from idea to publication." },
   { group: "industry", role: "Team Lead, Android and Web", org: "GSPI Ltd.", place: "Dhaka", start: "May 2018", end: "Mar 2021",
     detail: "Led the mobile and web team delivering e-commerce and business apps for multiple clients." },
   { group: "industry", role: "Web Developer", org: "Techideasolutions", place: "Dhaka", start: "Jan 2014", end: "Feb 2017",

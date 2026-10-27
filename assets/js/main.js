@@ -419,7 +419,7 @@
       <li class="tl${x.end === "Present" ? " now" : ""}"${expG !== "all" && x.group !== expG ? " hidden" : ""}>
         <span class="tl-when">${esc(x.start)} – ${esc(x.end)}</span>
         <h3>${esc(x.role)}</h3>
-        <span class="tl-org">${esc(x.org)}</span>${x.place ? `<span class="tl-when">, ${esc(x.place)}</span>` : ""}
+        ${x.orgUrl ? `<a class="tl-org" href="${esc(x.orgUrl)}" target="_blank" rel="noopener">${esc(x.org)}</a>` : `<span class="tl-org">${esc(x.org)}</span>`}${x.place ? `<span class="tl-when">, ${esc(x.place)}</span>` : ""}
         <p>${esc(x.detail)}</p>
       </li>`).join("");
   }
