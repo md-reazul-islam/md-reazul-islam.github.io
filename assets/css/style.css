@@ -228,6 +228,10 @@ main { padding: 56px clamp(20px, 5vw, 72px) 40px; max-width: calc(var(--main-w) 
 .bio-switch button { border: 0; background: none; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); }
 .bio-switch button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
 .bio { font-size: 17px; }
+.bio p { text-align: justify; text-justify: inter-word; hyphens: manual; }
+@media (max-width: 600px) {
+  .bio p { hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 10 4 4; -webkit-hyphenate-limit-before: 4; -webkit-hyphenate-limit-after: 4; }
+}
 .bio[data-kind="long"] { font-size: 16px; line-height: 1.7; }
 .bio[data-kind="long"] p { margin-bottom: .85em; }
 .about-side { position: sticky; top: 32px; align-self: start; }
