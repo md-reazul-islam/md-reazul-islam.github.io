@@ -16,7 +16,7 @@ const SITE = {
   lab: "Computer Vision and Machine Learning (CVML) Lab",
   location: "Albany, New York",
   email: "mislam7@albany.edu",
-  photo: WP + "2023/05/reazmama-e1683254536159.png",
+  photo: "assets/img/profile.jpg",
   cv: "assets/cv/Md_Reazul_Islam_CV.pdf",
   links: {
     scholar: "https://scholar.google.com/citations?user=qvP0kzkAAAAJ&hl=en",
