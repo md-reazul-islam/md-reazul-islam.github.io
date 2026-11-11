@@ -348,7 +348,8 @@ const PROJECTS = [
     title: "IntelligentGuard deep learning doorbell",
     summary: "Raspberry Pi doorbell that recognizes registered visitors by face, announces them by name, and sends photos of strangers to the owner’s phone.",
     stack: ["Raspberry Pi", "Face recognition", "OpenCV", "Android"],
-    images: [WP + "2023/06/fd2.jpg", WP + "2023/06/unknown-person-800x600.png", WP + "2023/06/known-person-after-reg-800x600.png"]
+    images: [WP + "2023/06/fd2.jpg", WP + "2023/06/unknown-person-800x600.png", WP + "2023/06/known-person-after-reg-800x600.png"],
+    links: [{ label: "Paper in IJEER", url: "https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130220.html" }]
   },
   {
     cat: "safety", year: 2023,
