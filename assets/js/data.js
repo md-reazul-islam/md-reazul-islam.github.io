@@ -436,7 +436,7 @@ const PROJECTS = [
     title: "Smart calling bell with caller identification",
     summary: "Users register from an app; the bell announces the caller’s name and room number.",
     stack: ["Raspberry Pi", "Android", "Database"],
-    images: [WP + "2023/05/r4-800x600.png", WP + "2023/05/r3-800x600.png", WP + "2023/05/r1-800x600.png"]
+    images: ["assets/img/projects/calling-bell-demo.jpg", "assets/img/projects/calling-bell-app.jpg", WP + "2023/05/r1-800x600.png"]
   },
   {
     cat: "smart", year: 2022,
