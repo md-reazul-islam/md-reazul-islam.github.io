@@ -290,7 +290,13 @@ const PROJECTS = [
     title: "AgriSense: soil nutrient monitoring and crop recommendation",
     summary: "NPK, moisture and climate sensing with ML recommendations for crops and fertilizer, plus a consumer-facing food quality report.",
     stack: ["JXBS-3001 NPK", "ESP8266", "Scikit-learn", "Flutter"],
-    images: [WP + "2023/06/s-800x589.png", WP + "2023/06/s1-800x591.png"],
+    images: [
+      "https://i.ytimg.com/vi/Xigh1D-9qbg/hq1.jpg",
+      "https://i.ytimg.com/vi/Xigh1D-9qbg/hq2.jpg",
+      "https://i.ytimg.com/vi/Xigh1D-9qbg/hq3.jpg",
+      WP + "2023/06/s-800x589.png", WP + "2023/06/s1-800x591.png"
+    ],
+    videos: [{ title: "AgriSense demo", src: "https://youtu.be/Xigh1D-9qbg" }],
     links: [{ label: "Paper in JAFR", url: "https://www.sciencedirect.com/science/article/pii/S2666154323003873" }]
   },
   {
