@@ -271,7 +271,11 @@ const PROJECTS = [
     title: "Deep learning IoT system for remote health monitoring",
     summary: "Home vital-sign kit (SpO₂, heart rate, ECG, temperature) with a CNN-attention classifier that flags arrhythmias and fever and connects patients to a doctor.",
     stack: ["MAX30100", "AD8232 ECG", "MQTT", "TensorFlow"],
-    images: [WP + "2024/02/1669797503034-800x600.jpg", WP + "2024/02/1669797503124-800x600.jpg"],
+    images: [
+      "assets/img/projects/health-monitoring-team.jpg",
+      "assets/img/projects/health-monitoring-dashboard.jpg",
+      WP + "2024/02/1669797503034-800x600.jpg", WP + "2024/02/1669797503124-800x600.jpg"
+    ],
     links: [{ label: "Paper in Sensors", url: "https://www.mdpi.com/1424-8220/23/11/5204" }]
   },
   {
