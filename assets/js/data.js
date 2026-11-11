@@ -304,7 +304,13 @@ const PROJECTS = [
     title: "Smart chair for sitting posture monitoring",
     summary: "Pressure sensors in a chair classify posture and send mobile alerts after prolonged poor sitting.",
     stack: ["Pressure sensors", "Arduino", "ML", "Mobile app"],
-    images: [WP + "2021/08/5.jpg", WP + "2021/08/4-736x600.jpg", WP + "2021/08/3-739x600.jpg"]
+    images: [
+      "https://i.ytimg.com/vi/WA70Eli5wC0/hq1.jpg",
+      "https://i.ytimg.com/vi/WA70Eli5wC0/hq2.jpg",
+      "https://i.ytimg.com/vi/WA70Eli5wC0/hq3.jpg",
+      WP + "2021/08/5.jpg", WP + "2021/08/4-736x600.jpg", WP + "2021/08/3-739x600.jpg"
+    ],
+    videos: [{ title: "Smart chair posture monitoring demo", src: "https://www.youtube.com/watch?v=WA70Eli5wC0" }]
   },
   {
     cat: "health", year: 2023, funded: true,
