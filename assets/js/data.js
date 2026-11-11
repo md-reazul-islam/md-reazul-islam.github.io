@@ -373,7 +373,13 @@ const PROJECTS = [
     title: "Automatic water pump controller",
     summary: "Low-cost controller with a reserve tank, overflow prevention and app control. Developed under the a2i innovation fund.",
     stack: ["Microcontroller", "Float switch", "Android"],
-    images: [WP + "2021/08/IMG_20230518_121830-800x600.jpg", WP + "2021/08/IMG_20230518_122613-800x600.jpg", WP + "2021/08/IMG_20230518_122601-800x600.jpg"],
+    images: [
+      "https://i.ytimg.com/vi/FdTlsgTZ-FA/hq1.jpg",
+      "https://i.ytimg.com/vi/FdTlsgTZ-FA/hq2.jpg",
+      "https://i.ytimg.com/vi/FdTlsgTZ-FA/hq3.jpg",
+      WP + "2021/08/IMG_20230518_121830-800x600.jpg", WP + "2021/08/IMG_20230518_122613-800x600.jpg", WP + "2021/08/IMG_20230518_122601-800x600.jpg"
+    ],
+    videos: [{ title: "Automatic water pump controller demo", src: "https://www.youtube.com/watch?v=FdTlsgTZ-FA" }],
     links: [{ label: "Book chapter", url: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781032659770-14/design-implementation-cost-effective-automatic-water-pump-control-system-domestic-applications-using-iot-md-reazul-islam-khondokar-oliullah-mahbub-rashid-jugal-krishna-das" }]
   },
   {
