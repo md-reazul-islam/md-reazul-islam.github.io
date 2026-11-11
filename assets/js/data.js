@@ -339,7 +339,7 @@ const PROJECTS = [
     title: "Portable diagnostic and medication system for rural areas",
     summary: "IoT kit for blood pressure, heart rate, temperature and glucose with remote clinician access and ML medication suggestions.",
     stack: ["IoMT", "Cloud", "ML", "Mobile app"],
-    images: [WP + "2023/05/diagnostic.png"]
+    images: ["assets/img/projects/rural-diagnostic-testing.jpg", WP + "2023/05/diagnostic.png"]
   },
   {
     cat: "safety", year: 2023,
