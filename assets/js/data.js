@@ -398,7 +398,13 @@ const PROJECTS = [
     title: "Smart AC dimmer switch",
     summary: "Phone-controlled dimming for lights and fans from anywhere, with live device status.",
     stack: ["ESP8266", "TRIAC dimmer", "Android"],
-    images: [WP + "2023/05/350163138_560869792917340_5994047203518434169_n-800x600.jpg", WP + "2023/05/ac1.png", WP + "2023/05/ac-dimmer.png"]
+    images: [
+      "https://i.ytimg.com/vi/EIMFQMpHEjQ/hq1.jpg",
+      "https://i.ytimg.com/vi/EIMFQMpHEjQ/hq2.jpg",
+      "https://i.ytimg.com/vi/EIMFQMpHEjQ/hq3.jpg",
+      WP + "2023/05/350163138_560869792917340_5994047203518434169_n-800x600.jpg", WP + "2023/05/ac1.png", WP + "2023/05/ac-dimmer.png"
+    ],
+    videos: [{ title: "Smart AC dimmer switch demo", src: "https://www.youtube.com/watch?v=EIMFQMpHEjQ" }]
   },
   {
     cat: "smart", year: 2022,
