@@ -457,7 +457,7 @@ const PROJECTS = [
     title: "Learning management system",
     summary: "Web and Android LMS used by schools and colleges for courses, assessment and progress tracking.",
     stack: ["Laravel", "Flutter", "MySQL"],
-    images: [WP + "2021/08/IMG_20230519_105025.jpg", WP + "2021/08/IMG_20230519_105110.jpg", WP + "2021/08/IMG_20230519_105221.jpg"]
+    images: ["assets/img/projects/lms-easy-school.jpg", "assets/img/projects/lms-features.jpg", "assets/img/projects/lms-live-class.jpg", WP + "2021/08/IMG_20230519_105110.jpg"]
   },
   {
     cat: "software", year: 2020,
