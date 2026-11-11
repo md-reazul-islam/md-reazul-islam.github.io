@@ -305,7 +305,13 @@ const PROJECTS = [
     title: "Smart shoes for health monitoring and BMI-based diet",
     summary: "Insole sensing for steps, pressure mapping, heart rate and weight, with ML-generated food charts by BMI category.",
     stack: ["Load cells", "Heart rate sensor", "BLE", "ML"],
-    images: [WP + "2023/06/ss1-800x517.png", WP + "2023/06/ss-800x591.png"]
+    images: [
+      "https://i.ytimg.com/vi/p1BB6LQxtQs/hq1.jpg",
+      "https://i.ytimg.com/vi/p1BB6LQxtQs/hq2.jpg",
+      "https://i.ytimg.com/vi/p1BB6LQxtQs/hq3.jpg",
+      WP + "2023/06/ss1-800x517.png", WP + "2023/06/ss-800x591.png"
+    ],
+    videos: [{ title: "Smart shoes demo", src: "https://youtu.be/p1BB6LQxtQs" }]
   },
   {
     cat: "health", year: 2023,

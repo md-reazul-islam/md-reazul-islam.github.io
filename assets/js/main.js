@@ -370,15 +370,25 @@
     ...(p.videos || []).map((v) => ({ type: "video", src: v.src, title: v.title })),
     ...(p.images || []).map((src) => ({ type: "img", src }))
   ];
-  const pmVid = $("#pmVideo");
+  const pmVid = $("#pmVideo"), pmYt = $("#pmYoutube");
+  const ytId = (u) => { const m = String(u).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/); return m ? m[1] : null; };
+  function stopYt() { if (pmYt.getAttribute("src")) pmYt.removeAttribute("src"); pmYt.hidden = true; }
   function showPm() {
     const media = projMedia(pmP), m = media[pmI];
     pmVid.pause();
-    if (m && m.type === "video") {
+    const yt = m && m.type === "video" ? ytId(m.src) : null;
+    if (yt) {
+      $("#pmImg").hidden = true; pmVid.hidden = true; pmVid.removeAttribute("src");
+      const src = `https://www.youtube-nocookie.com/embed/${yt}?rel=0&modestbranding=1&playsinline=1`;
+      if (pmYt.getAttribute("src") !== src) pmYt.src = src;
+      pmYt.title = "Video: " + (m.title || pmP.title); pmYt.hidden = false;
+    } else if (m && m.type === "video") {
+      stopYt();
       $("#pmImg").hidden = true; pmVid.hidden = false;
       if (pmVid.getAttribute("src") !== m.src) { pmVid.src = m.src; pmVid.poster = (pmP.images || [])[0] || ""; }
       pmVid.setAttribute("aria-label", "Video: " + (m.title || pmP.title));
     } else {
+      stopYt();
       pmVid.hidden = true; pmVid.removeAttribute("src"); pmVid.load(); $("#pmImg").hidden = false;
       $("#pmImg").src = m ? m.src : "";
       $("#pmImg").alt = pmP.title + (media.length > 1 ? `, item ${pmI + 1} of ${media.length}` : "");
@@ -387,10 +397,10 @@
     $("#pmPrev").hidden = $("#pmNext").hidden = media.length < 2;
     $("#pmThumbs").innerHTML = media.length > 1 ? media.map((x, i) =>
       `<button class="pm-thumb${i === pmI ? " on" : ""}" data-i="${i}" aria-label="${x.type === "video" ? "Play video" : "Show photo " + (i + 1)}">${
-        x.type === "video" ? `<span class="pm-play">▶</span>` : `<img src="${esc(x.src)}" alt="" loading="lazy">`}</button>`).join("") : "";
+        x.type === "video" ? (ytId(x.src) ? `<img src="https://i.ytimg.com/vi/${ytId(x.src)}/mqdefault.jpg" alt=""><span class="pm-play pm-play-over">▶</span>` : `<span class="pm-play">▶</span>`) : `<img src="${esc(x.src)}" alt="" loading="lazy">`}</button>`).join("") : "";
   }
   $("#pmThumbs").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) { pmI = +b.dataset.i; showPm(); } });
-  pm.addEventListener("close", () => { pmVid.pause(); });
+  pm.addEventListener("close", () => { pmVid.pause(); stopYt(); });
   $("#projGrid").addEventListener("click", (e) => {
     const card = e.target.closest(".proj"); if (!card) return;
     openProject(+card.dataset.p);
