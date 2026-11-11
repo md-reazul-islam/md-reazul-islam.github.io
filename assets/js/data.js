@@ -389,7 +389,7 @@ const PROJECTS = [
     title: "Smart surveillance robot",
     summary: "Raspberry Pi robot with autonomous patrol, live video streaming and object recognition.",
     stack: ["Raspberry Pi", "Object detection", "Streaming"],
-    images: [WP + "2024/02/403434110_621932173297126_2417418285765936726_n-800x600.jpg", WP + "2024/02/403411755_718390749896392_9189802518771146939_n-800x600.jpg"]
+    images: ["assets/img/projects/surveillance-robot-prototype.jpg", WP + "2024/02/403434110_621932173297126_2417418285765936726_n-800x600.jpg", WP + "2024/02/403411755_718390749896392_9189802518771146939_n-800x600.jpg"]
   },
   {
     cat: "smart", year: 2019, funded: true,
