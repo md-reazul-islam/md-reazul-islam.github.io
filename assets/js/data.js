@@ -411,7 +411,13 @@ const PROJECTS = [
     title: "IoT digital notice board",
     summary: "Campus display managed from a web dashboard and Android app for real-time announcements.",
     stack: ["Raspberry Pi", "Web dashboard", "Android"],
-    images: [WP + "2023/05/WhatsApp-Image-2023-05-12-at-5.47.07-PM-4.jpeg"]
+    images: [
+      "https://i.ytimg.com/vi/-im10savies/hq1.jpg",
+      "https://i.ytimg.com/vi/-im10savies/hq2.jpg",
+      "https://i.ytimg.com/vi/-im10savies/hq3.jpg",
+      WP + "2023/05/WhatsApp-Image-2023-05-12-at-5.47.07-PM-4.jpeg"
+    ],
+    videos: [{ title: "IoT digital notice board demo", src: "https://www.youtube.com/watch?v=-im10savies" }]
   },
   {
     cat: "smart", year: 2023,
