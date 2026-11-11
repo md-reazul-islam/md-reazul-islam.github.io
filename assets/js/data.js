@@ -283,7 +283,12 @@ const PROJECTS = [
     title: "Smart dress for real-time harassment detection",
     summary: "Detachable wearable with nine force sensors and an AdaBoost model (99.3% accuracy) that sends live location to trusted contacts and the three nearest police stations.",
     stack: ["NodeMCU", "FSR array", "AdaBoost", "Android"],
-    images: [WP + "2023/06/WhatsApp-Image-2023-06-05-at-1.07.38-PM-800x600.jpeg", WP + "2023/06/WhatsApp-Image-2023-06-09-at-8.26.12-PM-800x600.jpeg", WP + "2023/06/WhatsApp-Image-2023-06-10-at-1.44.23-PM-800x600.jpeg"],
+    images: [WP + "2023/06/WhatsApp-Image-2023-06-05-at-1.07.38-PM-800x600.jpeg", WP + "2023/06/WhatsApp-Image-2023-06-09-at-8.26.12-PM-800x600.jpeg", WP + "2023/06/WhatsApp-Image-2023-06-10-at-1.44.23-PM-800x600.jpeg",
+      "assets/img/projects/smart-dress-daily-campus.jpg",
+      "assets/img/projects/smart-dress-tbs-news.jpg",
+      "assets/img/projects/smart-dress-tbs-news-2.jpg",
+      "assets/img/projects/smart-dress-prothom-alo.jpg"
+    ],
     links: [
       { label: "Paper in MTAP", url: "https://link.springer.com/article/10.1007/s11042-024-20228-5" },
       { label: "TBS News feature", url: "https://www.tbsnews.net/features/panorama/quest-affordable-dress-detects-sexual-harassment-654910" }
