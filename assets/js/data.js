@@ -450,7 +450,7 @@ const PROJECTS = [
     title: "ICPC Asia Dhaka Regional schedule app",
     summary: "Volunteer-built app that helped contestants find rooms, dorms and schedules during the regional contest.",
     stack: ["Flutter", "Firebase"],
-    images: [WP + "2021/08/310830917_5603360136422700_5570352638817648050_n-556x600.jpg", WP + "2021/08/308013366_1917912838548387_2646503047979016371_n-800x600.jpg"]
+    images: ["assets/img/projects/icpc-app-closeup.jpg", "assets/img/projects/icpc-app-launch.jpg", "assets/img/projects/icpc-app-team.jpg", "assets/img/projects/icpc-app-team-2.jpg"]
   },
   {
     cat: "software", year: 2016,
