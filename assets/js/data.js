@@ -351,8 +351,13 @@ const PROJECTS = [
     title: "Automatic bicycle indicator and smart lock",
     summary: "Gyroscope-driven turn indicators that blink when the handlebar turns, with an IoT lock.",
     stack: ["NodeMCU", "Gyroscope", "Relays"],
-    images: [WP + "2021/08/bike-800x600.png", WP + "2021/08/c1-800x600.png", WP + "2021/08/bike2-800x600.png"],
-    videos: [{ title: "Bicycle indicator and smart lock demo", src: WP + "2021/08/IoT-and-ML-embedded-automatic-vehicles-indicator-and-smart-lock-1.mp4" }]
+    images: [
+      "https://i.ytimg.com/vi/YTtirP2YGC0/hq1.jpg",
+      "https://i.ytimg.com/vi/YTtirP2YGC0/hq2.jpg",
+      "https://i.ytimg.com/vi/YTtirP2YGC0/hq3.jpg",
+      WP + "2021/08/bike-800x600.png", WP + "2021/08/c1-800x600.png", WP + "2021/08/bike2-800x600.png"
+    ],
+    videos: [{ title: "Bicycle indicator and smart lock demo", src: "https://www.youtube.com/watch?v=YTtirP2YGC0" }]
   },
   {
     cat: "safety", year: 2023,
