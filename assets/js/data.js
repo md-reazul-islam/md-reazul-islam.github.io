@@ -213,7 +213,8 @@ const PUBLICATIONS = [
     type: "conference", year: 2023,
     title: "A portable diagnostic and medication system for rural areas using IoT",
     authors: "Md. Reazul Islam, Arman Hossain, Sayefa Arafah, MM Fazle Rabbi, Khondokar Oliullah, et al.",
-    venue: "International Conference on Trends in Electronics and Health Informatics (TEHI 2023)"
+    venue: "International Conference on Trends in Electronics and Health Informatics (TEHI 2023)",
+    url: "https://link.springer.com/chapter/10.1007/978-981-97-3937-0_46"
   },
   {
     type: "chapter", year: 2025,
@@ -339,7 +340,8 @@ const PROJECTS = [
     title: "Portable diagnostic and medication system for rural areas",
     summary: "IoT kit for blood pressure, heart rate, temperature and glucose with remote clinician access and ML medication suggestions.",
     stack: ["IoMT", "Cloud", "ML", "Mobile app"],
-    images: ["assets/img/projects/rural-diagnostic-testing.jpg", WP + "2023/05/diagnostic.png"]
+    images: ["assets/img/projects/rural-diagnostic-testing.jpg", WP + "2023/05/diagnostic.png"],
+    links: [{ label: "Paper (Springer)", url: "https://link.springer.com/chapter/10.1007/978-981-97-3937-0_46" }]
   },
   {
     cat: "safety", year: 2023,
