@@ -443,7 +443,7 @@ const PROJECTS = [
     title: "Smart locker system",
     summary: "Remote unlock, RFID and biometric access, and real-time activity notifications.",
     stack: ["RFID", "Biometrics", "Cloud"],
-    images: [WP + "2024/02/310695955_812174819815673_300595280908771752_n-800x600.jpg"]
+    images: ["assets/img/projects/smart-locker.jpg", WP + "2024/02/310695955_812174819815673_300595280908771752_n-800x600.jpg"]
   },
   {
     cat: "software", year: 2022,
