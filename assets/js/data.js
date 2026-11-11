@@ -382,7 +382,7 @@ const PROJECTS = [
     title: "Smart helmet for gas, temperature and GPS",
     summary: "Worker helmet that detects hazardous gases and heat and streams location with threshold alerts.",
     stack: ["Gas sensors", "GPS", "IoT cloud"],
-    images: [WP + "2024/02/403606938_3767270603495178_570968892320539314_n-800x600.jpg", WP + "2024/02/403612293_1835105733577702_4120930307215341273_n-800x600.jpg"]
+    images: ["assets/img/projects/smart-helmet-prototype.jpg", WP + "2024/02/403606938_3767270603495178_570968892320539314_n-800x600.jpg", WP + "2024/02/403612293_1835105733577702_4120930307215341273_n-800x600.jpg"]
   },
   {
     cat: "safety", year: 2023,
