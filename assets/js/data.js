@@ -338,7 +338,13 @@ const PROJECTS = [
     title: "Eye-blink monitoring for driver drowsiness",
     summary: "Camera-based blink analysis that alerts drowsy drivers and can trigger gradual vehicle slowdown.",
     stack: ["Computer vision", "Raspberry Pi", "Alerts"],
-    images: [WP + "2023/06/IMG_7065-800x600.jpg", WP + "2023/06/IMG_7062-800x600.jpg"]
+    images: [
+      "https://i.ytimg.com/vi/ASMW_INMa8Y/hq1.jpg",
+      "https://i.ytimg.com/vi/ASMW_INMa8Y/hq2.jpg",
+      "https://i.ytimg.com/vi/ASMW_INMa8Y/hq3.jpg",
+      WP + "2023/06/IMG_7065-800x600.jpg", WP + "2023/06/IMG_7062-800x600.jpg"
+    ],
+    videos: [{ title: "Eye-blink drowsiness monitor demo", src: "https://youtu.be/ASMW_INMa8Y" }]
   },
   {
     cat: "safety", year: 2023,
