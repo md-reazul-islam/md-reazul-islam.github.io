@@ -464,7 +464,7 @@ const PROJECTS = [
     title: "Single-vendor e-commerce apps",
     summary: "Customer and admin apps with catalog, cart, payments and order management for several retail clients.",
     stack: ["Flutter", "REST API", "Payments"],
-    images: [WP + "2021/08/app1-1.jpg", WP + "2021/08/a3.jpg", WP + "2021/08/a4.jpg"]
+    images: ["assets/img/projects/ecommerce-home-search.jpg", "assets/img/projects/ecommerce-categories-menu.jpg", WP + "2021/08/app1-1.jpg", WP + "2021/08/a3.jpg", WP + "2021/08/a4.jpg"]
   }
 ];
 
