@@ -436,10 +436,12 @@
   renderExp();
 
   /* ---------- Talks ---------- */
-  const talkImgs = [];
-  $("#talkList").innerHTML = TALKS.map((t) => {
+  // a talk can have one image (image) or several (images)
+  const talkImgSets = TALKS.map((t) => (t.images || (t.image ? [t.image] : [])).map((src) => ({ src, caption: t.event })));
+  $("#talkList").innerHTML = TALKS.map((t, ti) => {
     let thumb = "";
-    if (t.image) { talkImgs.push({ src: t.image, caption: t.event }); thumb = `<button class="talk-thumb" data-lb-talk="${talkImgs.length - 1}" aria-label="View photo from ${esc(t.event)}"><img src="${esc(t.image)}" alt="" loading="lazy"></button>`; }
+    const set = talkImgSets[ti];
+    if (set.length) thumb = `<button class="talk-thumb" data-lb-talk="${ti}" aria-label="View ${set.length > 1 ? set.length + " photos" : "photo"} from ${esc(t.event)}"><img src="${esc(set[0].src)}" alt="" loading="lazy">${set.length > 1 ? `<span class="talk-more">+${set.length - 1}</span>` : ""}</button>`;
     return `<article class="talk">
       <div class="talk-year">${t.year}</div>
       <div><span class="talk-kind">${esc(t.kind)}</span><h3>${esc(t.title)}</h3><p>${esc(t.event)}${t.link ? ` <a href="${esc(t.link)}" target="_blank" rel="noopener">Story</a>` : ""}</p></div>
@@ -447,7 +449,7 @@
     </article>`;
   }).join("");
   $("#talkList").addEventListener("click", (e) => {
-    const b = e.target.closest("[data-lb-talk]"); if (b) openLightbox(talkImgs, +b.dataset.lbTalk);
+    const b = e.target.closest("[data-lb-talk]"); if (b) openLightbox(talkImgSets[+b.dataset.lbTalk], 0);
   });
 
   /* ---------- Awards, service, skills, media ---------- */

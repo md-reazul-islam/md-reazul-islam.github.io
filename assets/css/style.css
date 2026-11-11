@@ -334,6 +334,8 @@ main { padding: 56px clamp(20px, 5vw, 72px) 40px; max-width: calc(var(--main-w) 
 .talk p { margin: 0; color: var(--muted); font-size: 14px; }
 .talk-thumb { width: 120px; aspect-ratio: 4/3; border-radius: var(--r-s); overflow: hidden; border: 0; padding: 0; background: var(--surface-2); }
 .talk-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.talk-thumb { position: relative; }
+.talk-more { position: absolute; right: 6px; bottom: 6px; background: rgba(20,14,28,.82); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 999px; }
 
 /* Awards */
 .awards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
