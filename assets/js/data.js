@@ -84,7 +84,8 @@ const RESEARCH = [
       "Continuous sensing with feedback into personalized recommendations",
       "Adaptive models that update to the individual over time"
     ],
-    tags: ["IoMT", "Personalized health", "Adaptive ML"], images: ["assets/img/talks/ualbany-showcase-2026-metabolic.jpg"] }
+    tags: ["IoMT", "Personalized health", "Adaptive ML"]
+  }
 ];
 
 /* News — newest first. date: "YYYY-MM" or "YYYY" */
@@ -494,7 +495,7 @@ const EDUCATION = [
 /* Talks, workshops and events */
 const TALKS = [
   { year: 2026, kind: "Presentation", title: "AI–IoT edge–cloud framework for real-time air pollution monitoring and mapping", event: "UAlbany Showcase Day 2026", link: "https://www.albany.edu/node/124526", images: ["assets/img/talks/ualbany-showcase-2026-app.jpg", "assets/img/talks/ualbany-showcase-2026-story.jpg", "assets/img/talks/ualbany-showcase-2026-lab.jpg"] },
-  { year: 2026, kind: "Presentation", title: "Closed-loop metabolic monitoring: an IoT-enabled adaptive framework for personalized dietary intervention", event: "UAlbany Showcase Day 2026" },
+  { year: 2026, kind: "Presentation", title: "Closed-loop metabolic monitoring: an IoT-enabled adaptive framework for personalized dietary intervention", event: "UAlbany Showcase Day 2026", images: ["assets/img/talks/ualbany-showcase-2026-metabolic.jpg"] },
   { year: 2025, kind: "Presentation", title: "The ethics of AI in academic work: the line between assistance and plagiarism", event: "AI+ Symposium, University at Albany", images: ["assets/img/talks/ai-plus-symposium-poster.jpg", "assets/img/talks/ai-plus-symposium-group.jpg"] },
   { year: 2023, kind: "Invited talk", title: "Moving innovation ideas to IoT prototypes and products in Bangladesh", event: "Smart Bangladesh Summit 2041", images: ["assets/img/talks/smart-bangladesh-summit-2041-panel.jpg", "assets/img/talks/smart-bangladesh-summit-2041-meeting.jpg", "assets/img/talks/smart-bangladesh-summit-2041-screen.jpg", WP + "2024/02/377440187_6672765469482156_5390103093721204015_n-800x600.jpg"] },
   { year: 2023, kind: "Exhibition", title: "Six research prototypes exhibited; five national awards", event: "Digital Bangladesh Mela 2023", images: ["assets/img/talks/digital-bangladesh-mela-2023-innovators.jpg", "assets/img/talks/digital-bangladesh-mela-2023-team.jpg", WP + "2023/06/FB_IMG_1674965397099-800x600.jpg"] },
