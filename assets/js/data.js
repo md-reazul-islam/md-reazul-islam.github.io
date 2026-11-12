@@ -503,7 +503,7 @@ const TALKS = [
   { year: 2022, kind: "Workshop", title: "Hands-on IoT workshop: 100+ students, 20 teams, 20 mini projects", event: "Bangladesh University of Business and Technology", images: ["assets/img/talks/bubt-iot-workshop-guiding.jpg", "assets/img/talks/bubt-iot-workshop-team.jpg", "assets/img/talks/bubt-iot-workshop-soldering.jpg", WP + "2024/02/310597073_787206742561211_8945174700966130486_n-800x600.jpg"] },
   { year: 2022, kind: "Organizer", title: "IoT Research Projects Showcase with 20+ supervised projects", event: "BUBT", image: WP + "2024/02/322719736_1002510417246717_7932477188357744008_n-800x600.jpg" },
   { year: 2022, kind: "Judge", title: "Tech expert and judge, district selection round", event: "Digital Bangladesh Innovation Award 2022", images: ["assets/img/talks/digital-bangladesh-innovation-award-2022-judging.jpg", WP + "2024/02/302173244_5494219364003445_1682040648441092603_n-800x600.jpg"] },
-  { year: 2022, kind: "Project review", title: "Funded research project evaluation", event: "a2i, Government of Bangladesh", image: WP + "2024/02/314144686_5715954578496588_6686494715505079475_n-1-800x600.jpg" }
+  { year: 2022, kind: "Project review", title: "Funded research project evaluation", event: "a2i, Government of Bangladesh", images: ["assets/img/talks/a2i-project-evaluation-app-demo.jpg", "assets/img/talks/a2i-bubt-smart-shoes-demo.jpg", WP + "2024/02/314144686_5715954578496588_6686494715505079475_n-1-800x600.jpg"] }
 ];
 
 const AWARDS = [
