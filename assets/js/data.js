@@ -84,8 +84,7 @@ const RESEARCH = [
       "Continuous sensing with feedback into personalized recommendations",
       "Adaptive models that update to the individual over time"
     ],
-    tags: ["IoMT", "Personalized health", "Adaptive ML"]
-  }
+    tags: ["IoMT", "Personalized health", "Adaptive ML"], images: ["assets/img/talks/ualbany-showcase-2026-metabolic.jpg"] }
 ];
 
 /* News — newest first. date: "YYYY-MM" or "YYYY" */
