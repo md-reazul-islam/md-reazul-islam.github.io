@@ -637,6 +637,20 @@ const SKILLS = [
 
 /* Gallery. cat: events | projects | teaching */
 const GALLERY = [
+  { src: "assets/img/talks/ualbany-showcase-2026-metabolic.jpg", cat: "events", caption: "Presenting closed-loop metabolic monitoring, UAlbany Showcase 2026" },
+  { src: "assets/img/talks/ai-plus-symposium-poster.jpg", cat: "events", caption: "Research poster at the AI+ Symposium, University at Albany" },
+  { src: "assets/img/talks/ai-plus-symposium-group.jpg", cat: "events", caption: "With colleagues at the AI+ Symposium, University at Albany" },
+  { src: "assets/img/talks/smart-bangladesh-summit-2041-panel.jpg", cat: "events", caption: "With the panel at the Smart Bangladesh 2041 workshop, Bangladesh Computer Council" },
+  { src: "assets/img/talks/smart-bangladesh-summit-2041-meeting.jpg", cat: "events", caption: "Smart Bangladesh 2041 workshop meeting, Bangladesh Computer Council" },
+  { src: "assets/img/talks/smart-bangladesh-summit-2041-screen.jpg", cat: "events", caption: "Smart Bangladesh 2041 workshop, Bangladesh Computer Council, September 2023" },
+  { src: "assets/img/talks/a2i-bubt-smart-shoes-demo.jpg", cat: "events", caption: "Presenting the smart shoes to a2i officials" },
+  { src: "assets/img/gallery/diagnostic-kit-with-faculty.jpg", cat: "events", caption: "Presenting the portable diagnostic kit with BUBT faculty" },
+  { src: "assets/img/gallery/north-south-university-event.jpg", cat: "events", caption: "At an event at North South University" },
+  { src: "assets/img/gallery/dls-car-starting-device-presentation.jpg", cat: "events", caption: "DLS car starting device presentation, Bangabandhu Innovation Grant" },
+  { src: "assets/img/gallery/idea-podium.jpg", cat: "events", caption: "Speaking at iDEA (Innovation Design and Entrepreneurship Academy)" },
+  { src: "assets/img/gallery/startup-bangladesh-workshop.jpg", cat: "events", caption: "Startup Bangladesh workshop on women entrepreneurs in the startup ecosystem" },
+  { src: "assets/img/gallery/big-2021-team.jpg", cat: "events", caption: "Team at Bangabandhu Innovation Grant (BIG) 2021" },
+  { src: "assets/img/gallery/big-2021-selfie.jpg", cat: "events", caption: "At the Bangabandhu Innovation Grant (BIG) 2021 venue" },
   { src: "assets/img/talks/digital-bangladesh-mela-2023-innovators.jpg", cat: "events", caption: "Team with five national awards, Digital Bangladesh Mela 2023" },
   { src: "assets/img/gallery/mela-2023-award-team.jpg", cat: "events", caption: "Receiving a national award with the team, Digital Bangladesh Mela 2023" },
   { src: "assets/img/gallery/mela-2023-award-trophy.jpg", cat: "events", caption: "Award-winning team, Digital Bangladesh Mela 2023" },
