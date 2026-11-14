@@ -22,7 +22,6 @@ const SITE = {
     scholar: "https://scholar.google.com/citations?user=qvP0kzkAAAAJ&hl=en",
     github: "https://github.com/md-reazul-islam",
     linkedin: "https://www.linkedin.com/in/md-reazul-islam-reaz/",
-    website: "https://mdreazulislam.info",
     twitter: "https://twitter.com/MdReazu98962731"
   },
   interests: [
