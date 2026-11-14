@@ -250,13 +250,20 @@
     <li${i >= NEWS_SHOWN ? " hidden" : ""}><time datetime="${esc(n.date)}">${fmtDate(n.date)}</time>
     <span>${esc(n.text)}${n.link ? ` <a href="${esc(n.link)}" target="_blank" rel="noopener">Read more</a>` : ""}</span></li>`).join("");
   const newsMore = $("#newsMore");
-  if (NEWS.length <= NEWS_SHOWN) newsMore.hidden = true;
+  let newsExpanded = false;
+  function applyNews() {
+    $$("#newsList li").forEach((li, i) => { li.hidden = !newsExpanded && i >= NEWS_SHOWN; });
+    newsMore.hidden = NEWS.length <= NEWS_SHOWN;
+    newsMore.setAttribute("aria-expanded", String(newsExpanded));
+    newsMore.querySelector("span").textContent = newsExpanded ? "Show less news" : `Show all ${NEWS.length} news items`;
+    newsMore.classList.toggle("open", newsExpanded);
+    $("#newsList").classList.toggle("collapsed", !newsExpanded && NEWS.length > NEWS_SHOWN);
+  }
   newsMore.addEventListener("click", () => {
-    const expanded = newsMore.dataset.open === "1";
-    $$("#newsList li").forEach((li, i) => { if (i >= NEWS_SHOWN) li.hidden = expanded; });
-    newsMore.dataset.open = expanded ? "0" : "1";
-    newsMore.textContent = expanded ? "Show all news" : "Show less";
+    newsExpanded = !newsExpanded; applyNews();
+    if (!newsExpanded) $("#news").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
   });
+  applyNews();
 
   /* ---------- Publications ---------- */
   const TYPE_LABEL = { journal: "Journal", conference: "Conference", chapter: "Book chapter", dataset: "Dataset" };
