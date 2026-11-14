@@ -510,17 +510,37 @@
 
   /* ---------- Gallery + lightbox ---------- */
   const GCATS = { all: "All", events: "Events", teaching: "Teaching", projects: "Research and Prototypes" };
-  let gCat = "all";
+  let gCat = "all", galExpanded = false;
+  const GAL_LIMIT = 20;
+  // show the first 20 photos of the current filter; "Show more" reveals the rest
+  function applyGallery() {
+    let n = 0;
+    $$("#galGrid .g-item").forEach((el) => {
+      const match = gCat === "all" || el.dataset.cat === gCat;
+      if (match) n++;
+      el.hidden = !match || (!galExpanded && n > GAL_LIMIT);
+    });
+    const btn = $("#galMore");
+    btn.hidden = n <= GAL_LIMIT;
+    btn.setAttribute("aria-expanded", String(galExpanded));
+    btn.querySelector("span").textContent = galExpanded ? "Show fewer photos" : `Show all ${n} photos`;
+    btn.classList.toggle("open", galExpanded);
+  }
   function renderGalFilter() {
-    $("#galFilter").innerHTML = Object.entries(GCATS).map(([k, v]) => `<button data-g="${k}" aria-pressed="${k === gCat}">${v}</button>`).join("");
+    const counts = GALLERY.reduce((a, g) => ((a[g.cat] = (a[g.cat] || 0) + 1), a), {});
+    $("#galFilter").innerHTML = Object.entries(GCATS).map(([k, v]) =>
+      `<button data-g="${k}" aria-pressed="${k === gCat}">${v}<span class="count">${k === "all" ? GALLERY.length : counts[k] || 0}</span></button>`).join("");
     $$("#galFilter button").forEach((b) => b.addEventListener("click", () => {
-      gCat = b.dataset.g; renderGalFilter();
-      $$("#galGrid .g-item").forEach((el) => { el.hidden = gCat !== "all" && el.dataset.cat !== gCat; });
+      gCat = b.dataset.g; galExpanded = false; renderGalFilter(); applyGallery();
     }));
   }
+  $("#galMore").addEventListener("click", () => {
+    galExpanded = !galExpanded; applyGallery();
+    if (!galExpanded) $("#gallery").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  });
   $("#galGrid").innerHTML = GALLERY.map((g, i) =>
     `<button class="g-item" data-g="${i}" data-cat="${g.cat}" aria-label="View: ${esc(g.caption)}"><img src="${esc(g.src)}" alt="${esc(g.caption)}" loading="lazy"><span>${esc(g.caption)}</span></button>`).join("");
-  renderGalFilter();
+  renderGalFilter(); applyGallery();
   $("#galGrid").addEventListener("click", (e) => {
     const b = e.target.closest(".g-item"); if (!b) return;
     const visible = GALLERY.filter((g) => gCat === "all" || g.cat === gCat);
