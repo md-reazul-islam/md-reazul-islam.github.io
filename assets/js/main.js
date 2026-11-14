@@ -511,8 +511,8 @@
   /* ---------- Gallery + lightbox ---------- */
   const GCATS = { all: "All", events: "Events", teaching: "Teaching", projects: "Research and Prototypes" };
   let gCat = "all", galExpanded = false;
-  const GAL_LIMIT = 20;
-  // show the first 20 photos of the current filter; "Show more" reveals the rest
+  const GAL_LIMIT = 16;
+  // show the first 16 photos of the current filter; "Show more" reveals the rest
   function applyGallery() {
     let n = 0;
     $$("#galGrid .g-item").forEach((el) => {
