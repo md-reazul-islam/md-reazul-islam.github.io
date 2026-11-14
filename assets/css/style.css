@@ -404,6 +404,8 @@ main { padding: 56px clamp(20px, 5vw, 72px) 40px; max-width: calc(var(--main-w) 
 .proj-grid:has(+ .gal-more-wrap .gal-more:not([hidden]):not(.open)) { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 120px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 120px), transparent); }
 #pubList.collapsed { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 90px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 90px), transparent); }
 #newsList.collapsed { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 70px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 70px), transparent); }
+.is-collapsed { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 90px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 90px), transparent); }
+.awards li[hidden], .media li[hidden], .talk[hidden] { display: none; }
 .gal-more { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 999px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); font-weight: 600; font-size: 14px; box-shadow: var(--shadow); transition: background .15s, color .15s; }
 .gal-more:hover { background: var(--accent); color: var(--accent-ink); }
 .gal-more svg { transition: transform .2s; }

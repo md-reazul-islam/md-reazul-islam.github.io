@@ -43,6 +43,32 @@
     toast(msg || "Copied");
   }
 
+  /* ---------- "Show all" helper for long lists ----------
+     Shows the first `limit` matching items; the button reveals the rest.
+     Returns { apply, reset } so filters can re-run it. */
+  function moreList({ list, items, btn, limit, noun, section, match = () => true }) {
+    let expanded = false;
+    const apply = () => {
+      let n = 0;
+      $$(items, $(list)).forEach((el) => {
+        const ok = match(el);
+        if (ok) n++;
+        el.hidden = !ok || (!expanded && n > limit);
+      });
+      const b = $(btn);
+      b.hidden = n <= limit;
+      b.setAttribute("aria-expanded", String(expanded));
+      b.querySelector("span").textContent = expanded ? `Show fewer ${noun}` : `Show all ${n} ${noun}`;
+      b.classList.toggle("open", expanded);
+      $(list).classList.toggle("is-collapsed", !expanded && n > limit);
+    };
+    $(btn).addEventListener("click", () => {
+      expanded = !expanded; apply();
+      if (!expanded && section) $(section).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    });
+    return { apply, reset: () => { expanded = false; apply(); } };
+  }
+
   /* ---------- Theme ---------- */
   function currentTheme() {
     const set = document.documentElement.getAttribute("data-theme");
@@ -488,6 +514,7 @@
       <div>${thumb}</div>
     </article>`;
   }).join("");
+  moreList({ list: "#talkList", items: ".talk", btn: "#talkMore", limit: 6, noun: "talks and workshops", section: "#talks" }).apply();
   $("#talkList").addEventListener("click", (e) => {
     const b = e.target.closest("[data-lb-talk]"); if (b) openLightbox(talkImgSets[+b.dataset.lbTalk], 0);
   });
@@ -503,6 +530,7 @@
   $("#awardList").innerHTML = AWARDS.map((a) =>
     `<li>${a.year ? `<span class="aw-year">${a.year}</span>` : ""}<h3>${esc(a.title)}</h3><p>${esc(a.by)}</p>${
       a.cert && certById[a.cert] ? `<button class="aw-cert" data-cert="${esc(a.cert)}">View certificate</button>` : ""}</li>`).join("");
+  moreList({ list: "#awardList", items: "li", btn: "#awardMore", limit: 6, noun: "awards", section: "#awards" }).apply();
   $("#awardList").addEventListener("click", (e) => {
     const b = e.target.closest("[data-cert]"); if (b) openLightbox([certItem(certById[b.dataset.cert])], 0);
   });
@@ -520,8 +548,7 @@
     $("#certFilter").innerHTML = keys.map((k) =>
       `<button data-c="${k}" aria-pressed="${k === certCat}">${k === "all" ? "All" : CERT_CATS[k]}<span class="count">${k === "all" ? CERTIFICATES.length : counts[k]}</span></button>`).join("");
     $$("#certFilter button").forEach((b) => b.addEventListener("click", () => {
-      certCat = b.dataset.c; renderCertFilter();
-      $$("#certGrid .cert").forEach((el) => { el.hidden = certCat !== "all" && el.dataset.cat !== certCat; });
+      certCat = b.dataset.c; renderCertFilter(); certMore.reset();
     }));
   }
   $("#certGrid").innerHTML = certsSorted.map((c) => `
@@ -534,6 +561,9 @@
       </span>
     </button>`).join("");
   renderCertFilter();
+  const certMore = moreList({ list: "#certGrid", items: ".cert", btn: "#certMore", limit: 6, noun: "certificates", section: ".certs-head",
+    match: (el) => certCat === "all" || el.dataset.cat === certCat });
+  certMore.apply();
   $("#certGrid").addEventListener("click", (e) => {
     const b = e.target.closest(".cert"); if (!b) return;
     const visible = certsSorted.filter((c) => certCat === "all" || c.cat === certCat);
@@ -547,6 +577,7 @@
     <li><a href="${esc(m.url)}" target="_blank" rel="noopener">
       <span class="m-outlet">${esc(m.outlet)}</span><span class="m-title">${esc(m.title)}</span><span class="m-date">${esc(m.date)}</span>
     </a></li>`).join("");
+  moreList({ list: "#mediaList", items: "li", btn: "#mediaMore", limit: 6, noun: "media stories", section: "#media" }).apply();
 
   /* ---------- Gallery + lightbox ---------- */
   const GCATS = { all: "All", events: "Events", teaching: "Teaching", projects: "Research and Prototypes" };
