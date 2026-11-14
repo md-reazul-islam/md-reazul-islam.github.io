@@ -637,6 +637,23 @@ const SKILLS = [
 
 /* Gallery. cat: events | projects | teaching */
 const GALLERY = [
+  { src: "assets/img/gallery/iot-lab-showcase.jpg", cat: "projects", caption: "Showcasing IoT Lab prototypes: smart helmet, robot cars and smart parking" },
+  { src: "assets/img/gallery/iot-lab-prototypes-table.jpg", cat: "projects", caption: "IoT Lab prototypes on display" },
+  { src: "assets/img/gallery/smart-helmet.jpg", cat: "projects", caption: "Smart helmet with ultrasonic, gas and temperature sensors" },
+  { src: "assets/img/projects/surveillance-robot-prototype.jpg", cat: "projects", caption: "Smart surveillance robot" },
+  { src: "assets/img/gallery/smart-cradle.jpg", cat: "projects", caption: "Smart cradle prototype with sound sensor and fan" },
+  { src: "assets/img/gallery/smart-parking.jpg", cat: "projects", caption: "Smart parking system prototype" },
+  { src: "assets/img/gallery/air-quality-monitor.jpg", cat: "projects", caption: "Air quality monitoring system" },
+  { src: "assets/img/gallery/puffmix-pro.jpg", cat: "projects", caption: "PuffMix Pro automated mixer prototype" },
+  { src: "assets/img/gallery/sensor-light-fan-controller.jpg", cat: "projects", caption: "Sensor-controlled lights and fan prototype" },
+  { src: "assets/img/gallery/water-pump-controller.jpg", cat: "projects", caption: "Water pump controller with overhead and reserve tanks" },
+  { src: "assets/img/gallery/safety-gps-device.jpg", cat: "projects", caption: "Force-sensor and GPS safety device" },
+  { src: "assets/img/gallery/building-smart-dress.jpg", cat: "projects", caption: "Building the smart dress prototype" },
+  { src: "assets/img/projects/health-monitoring-team.jpg", cat: "projects", caption: "Remote health monitoring team" },
+  { src: "assets/img/projects/health-monitoring-dashboard.jpg", cat: "projects", caption: "Remote health monitoring test" },
+  { src: "assets/img/projects/smart-locker.jpg", cat: "projects", caption: "Smart locker prototype" },
+  { src: "assets/img/projects/calling-bell-demo.jpg", cat: "projects", caption: "Smart calling bell demo" },
+  { src: "assets/img/projects/calling-bell-app.jpg", cat: "projects", caption: "Smart calling bell app" },
   { src: WP + "2023/06/IMG-20230129-WA0006-800x600.jpg", cat: "events", caption: "Digital Bangladesh Mela 2023" },
   { src: WP + "2023/06/IMG20230128183313-800x600.jpg", cat: "events", caption: "Exhibiting research prototypes, Digital Bangladesh Mela 2023" },
   { src: WP + "2023/06/IMG-20230129-WA0075-800x600.jpg", cat: "events", caption: "Award ceremony, Digital Bangladesh Mela 2023" },
