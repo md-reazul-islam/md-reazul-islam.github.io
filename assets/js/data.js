@@ -373,7 +373,7 @@ const PROJECTS = [
       "https://i.ytimg.com/vi/YTtirP2YGC0/hq1.jpg",
       "https://i.ytimg.com/vi/YTtirP2YGC0/hq2.jpg",
       "https://i.ytimg.com/vi/YTtirP2YGC0/hq3.jpg",
-      WP + "2021/08/bike-800x600.png", WP + "2021/08/c1-800x600.png", WP + "2021/08/bike2-800x600.png"
+      "assets/img/gallery/bicycle-indicator-street.jpg", WP + "2021/08/c1-800x600.png", WP + "2021/08/bike2-800x600.png"
     ],
     videos: [{ title: "Bicycle indicator and smart lock demo", src: "https://www.youtube.com/watch?v=YTtirP2YGC0" }]
   },
@@ -400,7 +400,7 @@ const PROJECTS = [
       "https://i.ytimg.com/vi/FdTlsgTZ-FA/hq1.jpg",
       "https://i.ytimg.com/vi/FdTlsgTZ-FA/hq2.jpg",
       "https://i.ytimg.com/vi/FdTlsgTZ-FA/hq3.jpg",
-      WP + "2021/08/IMG_20230518_121830-800x600.jpg", WP + "2021/08/IMG_20230518_122613-800x600.jpg", WP + "2021/08/IMG_20230518_122601-800x600.jpg"
+      "assets/img/gallery/water-pump-controller-promo.jpg", WP + "2021/08/IMG_20230518_122613-800x600.jpg", WP + "2021/08/IMG_20230518_122601-800x600.jpg"
     ],
     videos: [{ title: "Automatic water pump controller demo", src: "https://www.youtube.com/watch?v=FdTlsgTZ-FA" }],
     links: [{ label: "Book chapter", url: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781032659770-14/design-implementation-cost-effective-automatic-water-pump-control-system-domestic-applications-using-iot-md-reazul-islam-khondokar-oliullah-mahbub-rashid-jugal-krishna-das" }]
@@ -414,7 +414,7 @@ const PROJECTS = [
       "https://i.ytimg.com/vi/EIMFQMpHEjQ/hq1.jpg",
       "https://i.ytimg.com/vi/EIMFQMpHEjQ/hq2.jpg",
       "https://i.ytimg.com/vi/EIMFQMpHEjQ/hq3.jpg",
-      WP + "2023/05/350163138_560869792917340_5994047203518434169_n-800x600.jpg", WP + "2023/05/ac1.png", WP + "2023/05/ac-dimmer.png"
+      "assets/img/gallery/smart-ac-dimmer-demo.jpg", WP + "2023/05/ac1.png", WP + "2023/05/ac-dimmer.png"
     ],
     videos: [{ title: "Smart AC dimmer switch demo", src: "https://www.youtube.com/watch?v=EIMFQMpHEjQ" }]
   },
@@ -654,6 +654,22 @@ const GALLERY = [
   { src: "assets/img/projects/smart-locker.jpg", cat: "projects", caption: "Smart locker prototype" },
   { src: "assets/img/projects/calling-bell-demo.jpg", cat: "projects", caption: "Smart calling bell demo" },
   { src: "assets/img/projects/calling-bell-app.jpg", cat: "projects", caption: "Smart calling bell app" },
+  { src: "assets/img/projects/icpc-app-launch.jpg", cat: "projects", caption: "Launching the ICPC schedule app" },
+  { src: "assets/img/projects/icpc-app-closeup.jpg", cat: "projects", caption: "ICPC schedule app on a phone" },
+  { src: "assets/img/projects/icpc-app-team-2.jpg", cat: "projects", caption: "ICPC schedule app development team" },
+  { src: "assets/img/gallery/lms-app-features.jpg", cat: "projects", caption: "Easy School learning app features" },
+  { src: "assets/img/gallery/smart-ac-dimmer-demo.jpg", cat: "projects", caption: "Smart AC dimmer demo" },
+  { src: "assets/img/projects/rural-diagnostic-testing.jpg", cat: "projects", caption: "Testing the rural diagnostic kit" },
+  { src: "assets/img/gallery/relay-cardboard-prototype.jpg", cat: "projects", caption: "Relay-controlled cardboard prototype" },
+  { src: "assets/img/projects/smart-dress-tbs-news-2.jpg", cat: "projects", caption: "Smart dress in The Business Standard" },
+  { src: "assets/img/gallery/smart-chair-app-test.jpg", cat: "projects", caption: "Testing the smart chair with its app" },
+  { src: "assets/img/gallery/smart-chair-posture-app.jpg", cat: "projects", caption: "Smart chair posture monitoring app" },
+  { src: "assets/img/gallery/covid-disinfection-gateway.jpg", cat: "projects", caption: "COVID-19 disinfection gateway" },
+  { src: "assets/img/projects/smart-dress-daily-campus.jpg", cat: "projects", caption: "Presenting the smart dress to The Daily Campus" },
+  { src: "assets/img/gallery/water-pump-app-screens.jpg", cat: "projects", caption: "Water pump controller app screens" },
+  { src: "assets/img/gallery/water-pump-controller-promo.jpg", cat: "projects", caption: "Explaining the water pump controller" },
+  { src: "assets/img/gallery/iot-lab-at-table.jpg", cat: "projects", caption: "In the IoT Lab with student prototypes" },
+  { src: "assets/img/gallery/bicycle-indicator-street.jpg", cat: "projects", caption: "Bicycle turn indicator on the street" },
   { src: WP + "2023/06/IMG-20230129-WA0006-800x600.jpg", cat: "events", caption: "Digital Bangladesh Mela 2023" },
   { src: WP + "2023/06/IMG20230128183313-800x600.jpg", cat: "events", caption: "Exhibiting research prototypes, Digital Bangladesh Mela 2023" },
   { src: WP + "2023/06/IMG-20230129-WA0075-800x600.jpg", cat: "events", caption: "Award ceremony, Digital Bangladesh Mela 2023" },
@@ -669,5 +685,5 @@ const GALLERY = [
   { src: WP + "2024/02/1669797503034-800x600.jpg", cat: "projects", caption: "Remote health monitoring kit" },
   { src: WP + "2021/08/IMG_20230518_122613-800x600.jpg", cat: "projects", caption: "Water pump controller installed" },
   { src: WP + "2023/06/fd1.jpg", cat: "projects", caption: "IntelligentGuard doorbell" },
-  { src: WP + "2021/08/c2-800x600.png", cat: "projects", caption: "Bicycle indicator circuit" }
+  { src: "assets/img/gallery/bicycle-indicator-team.jpg", cat: "projects", caption: "Bicycle turn-indicator test with the team" }
 ];
