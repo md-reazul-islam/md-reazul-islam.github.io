@@ -261,7 +261,7 @@
   /* ---------- Publications ---------- */
   const TYPE_LABEL = { journal: "Journal", conference: "Conference", chapter: "Book chapter", dataset: "Dataset" };
   const ME = /(Md\.?\s?Reazul Islam)/g;
-  let pubType = "all", pubQuery = "";
+  let pubType = "all", pubQuery = "", pubExpanded = false;
 
   function citation(p) {
     return `${p.authors}. (${p.year || "n.d."}). ${p.title}. ${p.venue}.${p.url ? " " + p.url : ""}`;
@@ -291,7 +291,18 @@
       .sort((a, b) => (b.year || 9999) - (a.year || 9999) || (b.cites || 0) - (a.cites || 0));
     const groups = {};
     list.forEach((p) => { const k = p.year ? String(p.year) : "Forthcoming and other"; (groups[k] = groups[k] || []).push(p); });
-    const order = Object.keys(groups).sort((a, b) => (isNaN(b) ? -1 : +b) - (isNaN(a) ? -1 : +a));
+    const allOrder = Object.keys(groups).sort((a, b) => (isNaN(b) ? -1 : +b) - (isNaN(a) ? -1 : +a));
+    // default view (All, no search): only the most recent year until "Show all" is clicked
+    const collapsible = pubType === "all" && !q && allOrder.length > 1;
+    const order = collapsible && !pubExpanded ? allOrder.slice(0, 1) : allOrder;
+    const more = $("#pubMore");
+    more.hidden = !collapsible;
+    more.setAttribute("aria-expanded", String(pubExpanded));
+    more.querySelector("span").textContent = pubExpanded
+      ? `Show only ${allOrder[0]} publications`
+      : `Show all ${list.length} publications`;
+    more.classList.toggle("open", pubExpanded);
+    $("#pubList").classList.toggle("collapsed", collapsible && !pubExpanded);
     $("#pubList").innerHTML = order.map((k) => `
       <h3 class="pub-year">${k}</h3>
       ${groups[k].map((p) => `
@@ -328,6 +339,10 @@
   });
   $("#pubSearch").addEventListener("input", (e) => { pubQuery = e.target.value; renderPubs(); });
   renderPubFilter(); renderPubs();
+  $("#pubMore").addEventListener("click", () => {
+    pubExpanded = !pubExpanded; renderPubs();
+    if (!pubExpanded) $("#publications").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  });
 
   /* ---------- Projects ---------- */
   let projCat = "all", projExpanded = false;
@@ -598,7 +613,7 @@
     { kind: "Action", label: "Copy email address", go: () => copy(SITE.email, "Email address copied") },
     { kind: "Action", label: "Switch light or dark theme", go: () => $('[data-action="theme"]').click() },
     ...PUBLICATIONS.map((p, i) => ({ kind: "Paper", label: p.title, go: () => {
-      pubType = "all"; pubQuery = ""; $("#pubSearch").value = ""; renderPubFilter(); renderPubs();
+      pubType = "all"; pubQuery = ""; pubExpanded = true; $("#pubSearch").value = ""; renderPubFilter(); renderPubs();
       const el = $("#pub-" + i); el.scrollIntoView({ block: "center" });
       const btn = $(`[data-abs="${i}"]`, el); if (btn.getAttribute("aria-expanded") === "false") btn.click(); btn.focus();
     } })),
