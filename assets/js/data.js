@@ -637,6 +637,19 @@ const SKILLS = [
 
 /* Gallery. cat: events | projects | teaching */
 const GALLERY = [
+  { src: "assets/img/talks/bubt-iot-workshop-guiding.jpg", cat: "teaching", caption: "Guiding students during the hands-on IoT workshop" },
+  { src: "assets/img/talks/bubt-iot-workshop-team.jpg", cat: "teaching", caption: "Working through an IoT build with a student team" },
+  { src: "assets/img/talks/bubt-iot-workshop-soldering.jpg", cat: "teaching", caption: "Students soldering an ESP8266 prototype" },
+  { src: "assets/img/gallery/teaching-iot-lab-group.jpg", cat: "teaching", caption: "With student teams and their IoT prototypes in the lab" },
+  { src: "assets/img/gallery/teaching-presenting-prototype.jpg", cat: "teaching", caption: "Explaining a student prototype to visiting evaluators" },
+  { src: "assets/img/talks/iot-showcase-2023-team.jpg", cat: "teaching", caption: "IoT project showcase with students, 2023" },
+  { src: "assets/img/gallery/teaching-smart-light-students.jpg", cat: "teaching", caption: "With students and their smart lighting prototype" },
+  { src: "assets/img/talks/iot-showcase-2022-group.jpg", cat: "teaching", caption: "IoT Research Projects Showcase 2022 with students and prototypes" },
+  { src: "assets/img/talks/iot-showcase-2022-team.jpg", cat: "teaching", caption: "Student teams with their IoT prototypes, 2022" },
+  { src: "assets/img/gallery/teaching-smart-stick-team.jpg", cat: "teaching", caption: "Student team with their smart stick prototype" },
+  { src: "assets/img/gallery/teaching-smart-dustbin-team.jpg", cat: "teaching", caption: "Student team with their smart dustbin prototype" },
+  { src: "assets/img/gallery/teaching-smart-house-team.jpg", cat: "teaching", caption: "Student team with their smart house model" },
+  { src: "assets/img/gallery/teaching-student-team-prototype.jpg", cat: "teaching", caption: "Student team presenting their IoT prototype" },
   { src: "assets/img/talks/ualbany-showcase-2026-metabolic.jpg", cat: "events", caption: "Presenting closed-loop metabolic monitoring, UAlbany Showcase 2026" },
   { src: "assets/img/talks/ai-plus-symposium-poster.jpg", cat: "events", caption: "Research poster at the AI+ Symposium, University at Albany" },
   { src: "assets/img/talks/ai-plus-symposium-group.jpg", cat: "events", caption: "With colleagues at the AI+ Symposium, University at Albany" },
