@@ -637,6 +637,9 @@ const SKILLS = [
 
 /* Gallery. cat: events | projects | teaching */
 const GALLERY = [
+  { src: "assets/img/talks/ualbany-showcase-2026-story.jpg", cat: "projects", caption: "Featured by UAlbany: app to help you avoid pollution hot spots, Showcase 2026" },
+  { src: "assets/img/talks/ualbany-showcase-2026-lab.jpg", cat: "projects", caption: "Working on the AI–IoT air pollution monitoring dashboard, UAlbany 2026" },
+  { src: "assets/img/talks/ualbany-showcase-2026-app.jpg", cat: "projects", caption: "Pollution hot-spot mapping app, UAlbany Showcase 2026" },
   { src: "assets/img/talks/bubt-iot-workshop-guiding.jpg", cat: "teaching", caption: "Guiding students during the hands-on IoT workshop" },
   { src: "assets/img/talks/bubt-iot-workshop-team.jpg", cat: "teaching", caption: "Working through an IoT build with a student team" },
   { src: "assets/img/talks/bubt-iot-workshop-soldering.jpg", cat: "teaching", caption: "Students soldering an ESP8266 prototype" },
