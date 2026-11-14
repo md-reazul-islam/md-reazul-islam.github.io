@@ -330,15 +330,29 @@
   renderPubFilter(); renderPubs();
 
   /* ---------- Projects ---------- */
-  let projCat = "all";
+  let projCat = "all", projExpanded = false;
+  const PROJ_LIMIT = 9;
+  // show the first 9 projects of the current filter; the button reveals the rest
+  function applyProjects() {
+    let n = 0;
+    $$("#projGrid .proj").forEach((el) => {
+      const match = projCat === "all" || el.dataset.cat === projCat;
+      if (match) n++;
+      el.hidden = !match || (!projExpanded && n > PROJ_LIMIT);
+    });
+    const btn = $("#projMore");
+    btn.hidden = n <= PROJ_LIMIT;
+    btn.setAttribute("aria-expanded", String(projExpanded));
+    btn.querySelector("span").textContent = projExpanded ? "Show fewer projects" : `Show all ${n} projects`;
+    btn.classList.toggle("open", projExpanded);
+  }
   function renderProjFilter() {
     const counts = PROJECTS.reduce((a, p) => ((a[p.cat] = (a[p.cat] || 0) + 1), a), {});
     const keys = ["all", ...Object.keys(PROJECT_CATS).filter((k) => counts[k])];
     $("#projFilter").innerHTML = keys.map((k) =>
       `<button data-c="${k}" aria-pressed="${k === projCat}">${k === "all" ? "All" : PROJECT_CATS[k]}<span class="count">${k === "all" ? PROJECTS.length : counts[k]}</span></button>`).join("");
     $$("#projFilter button").forEach((b) => b.addEventListener("click", () => {
-      projCat = b.dataset.c; renderProjFilter();
-      $$("#projGrid .proj").forEach((el) => { el.hidden = projCat !== "all" && el.dataset.cat !== projCat; });
+      projCat = b.dataset.c; projExpanded = false; renderProjFilter(); applyProjects();
     }));
   }
   $("#projGrid").innerHTML = PROJECTS.map((p, i) => `
@@ -354,7 +368,11 @@
         <p>${esc(p.summary)}</p>
       </div>
     </button>`).join("");
-  renderProjFilter();
+  renderProjFilter(); applyProjects();
+  $("#projMore").addEventListener("click", () => {
+    projExpanded = !projExpanded; applyProjects();
+    if (!projExpanded) $("#projects").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+  });
 
   // broken-image fallback: keep layout tidy if a remote image is gone
   document.addEventListener("error", (e) => {

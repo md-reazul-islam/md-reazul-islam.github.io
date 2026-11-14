@@ -401,6 +401,7 @@ main { padding: 56px clamp(20px, 5vw, 72px) 40px; max-width: calc(var(--main-w) 
 .g-item[hidden] { display: none; }
 .gal-more-wrap { display: flex; justify-content: center; margin-top: 20px; position: relative; }
 .gallery:has(+ .gal-more-wrap .gal-more:not([hidden]):not(.open)) { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 140px), transparent); }
+.proj-grid:has(+ .gal-more-wrap .gal-more:not([hidden]):not(.open)) { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 120px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 120px), transparent); }
 .gal-more { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 999px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); font-weight: 600; font-size: 14px; box-shadow: var(--shadow); transition: background .15s, color .15s; }
 .gal-more:hover { background: var(--accent); color: var(--accent-ink); }
 .gal-more svg { transition: transform .2s; }
