@@ -509,7 +509,7 @@
     </a></li>`).join("");
 
   /* ---------- Gallery + lightbox ---------- */
-  const GCATS = { all: "All", events: "Events", teaching: "Teaching", projects: "Prototypes" };
+  const GCATS = { all: "All", events: "Events", teaching: "Teaching", projects: "Research and Prototypes" };
   let gCat = "all";
   function renderGalFilter() {
     $("#galFilter").innerHTML = Object.entries(GCATS).map(([k, v]) => `<button data-g="${k}" aria-pressed="${k === gCat}">${v}</button>`).join("");
